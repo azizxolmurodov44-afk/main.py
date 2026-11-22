@@ -7,6 +7,8 @@
       name="description"
       content="Qon donorligi jamoasi uchun so'rovlar, ehtiyojlar va donorlik ma'lumotlari."
     />
+    <meta name="robots" content="noarchive, nosnippet" />
+    <meta name="googlebot" content="noarchive, nosnippet" />
     <title>Qon Hayoti - Qon donorligi platformasi</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -33,6 +35,7 @@
           <a href="#how">Qanday ishlaydi</a>
           <a href="#faq">Savollar</a>
           <a class="nav-contact" href="#request">Ehtiyoj e'loni</a>
+          <button class="login-button" type="button" data-open-login>Kirish</button>
         </div>
       </nav>
     </header>
@@ -230,6 +233,47 @@
         <p>&copy; <span id="year"></span>. Xavfsiz va ishonchli ma'lumot uchun.</p>
       </div>
     </footer>
+
+    <dialog class="login-dialog" id="login-dialog" aria-labelledby="login-title">
+      <button class="dialog-close" type="button" data-close-login aria-label="Yopish">&times;</button>
+      <p class="eyebrow">HISOB KIRISHI</p>
+      <h2 id="login-title">Xavfsiz kirish rejimi</h2>
+      <p>
+        Hozirgi statik sayt shaxsiy ma'lumotlarni saqlamaydi. Hisob va ro'yxatdan
+        o'tish real backend ulanishidan keyin xavfsiz ishga tushiriladi.
+      </p>
+      <form class="demo-login-form" id="demo-login-form">
+        <label>
+          E-pochta
+          <input type="email" name="email" placeholder="name@example.com" required />
+        </label>
+        <button class="button button-primary" type="submit">Kirish rejimini ko'rish</button>
+        <p class="form-status" id="login-status" role="status"></p>
+      </form>
+    </dialog>
+
+    <aside class="ai-assistant" aria-label="Sayt ichidagi yordamchi">
+      <button class="ai-toggle" type="button" aria-expanded="false" aria-controls="ai-panel">
+        <span aria-hidden="true">?</span>
+        Yordamchi
+      </button>
+      <div class="ai-panel" id="ai-panel" hidden>
+        <div class="ai-header">
+          <div>
+            <strong>Sayt yordamchisi</strong>
+            <span>Faqat ochiq sahifa ma'lumotlari</span>
+          </div>
+          <button type="button" class="ai-close" aria-label="Yopish">&times;</button>
+        </div>
+        <div class="ai-messages" id="ai-messages" aria-live="polite">
+          <p class="ai-message ai-bot">Nimani qidirishni xohlaysiz? Masalan: “qon guruhlari”, “qanday topshirish”, “savollar”.</p>
+        </div>
+        <form class="ai-form" id="ai-form">
+          <input type="search" name="query" placeholder="Saytdan qidirish..." aria-label="Saytdan qidirish" required />
+          <button type="submit" aria-label="Qidirish">&rarr;</button>
+        </form>
+      </div>
+    </aside>
 
     <script src="script.js"></script>
   </body>
