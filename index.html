@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Qon topshirish haqida umumiy ma'lumot, jarayon va tez-tez so'raladigan savollar."
+      content="Qon donorligi jamoasi uchun so'rovlar, ehtiyojlar va donorlik ma'lumotlari."
     />
-    <title>Qon donori - Bir qancha hayotga umid</title>
+    <title>Qon Hayoti - Qon donorligi platformasi</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,7 +15,7 @@
       <nav class="nav container" aria-label="Asosiy navigatsiya">
         <a class="brand" href="#home" aria-label="Bosh sahifa">
           <span class="brand-mark" aria-hidden="true">+</span>
-          <span>Hayot</span>
+          <span>Qon Hayoti</span>
         </a>
 
         <button
@@ -25,17 +25,14 @@
           aria-controls="nav-links"
           aria-label="Menyuni ochish"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
 
         <div class="nav-links" id="nav-links">
-          <a href="#home">Bosh sahifa</a>
-          <a href="#overview">Ma'lumot</a>
-          <a href="#process">Jarayon</a>
+          <a href="#requests">Qon so'rovlari</a>
+          <a href="#how">Qanday ishlaydi</a>
           <a href="#faq">Savollar</a>
-          <a class="nav-contact" href="#donate">Qon topshirish</a>
+          <a class="nav-contact" href="#request">Ehtiyoj e'loni</a>
         </div>
       </nav>
     </header>
@@ -44,76 +41,159 @@
       <section class="hero" id="home">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">BIR QONDA — KO'P UMID</p>
-            <h1>Bir marta topshiring, bir nechta hayotga yordam bering.</h1>
+            <p class="eyebrow">JAMOA. UMID. HAYOT.</p>
+            <h1>Bir dona qoningiz bilan hayotga umid bag'ishlang.</h1>
             <p class="hero-text">
-              Qon topshirish - rejalashtirilgan, xabardor yondashuv va
-              mahalliy qon xizmatining tekshiruvini talab qiladigan
-              ixtiyoriy hissa.
+              Hududingizdagi qon ehtiyojlarini ko'ring, donorlik jarayonini
+              biling va jamoaviy ma'lumotga ko'ra munosib markazga murojaat qiling.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#donate">Donor bo'lish</a>
-              <a class="button button-secondary" href="#overview">Batafsil ma'lumot</a>
+              <a class="button button-primary" href="#requests">Ehtiyojlarni ko'rish</a>
+              <a class="button button-secondary" href="#how">Qanday yordam berish</a>
             </div>
           </div>
 
-          <div class="hero-visual blood-visual" aria-label="Qon topshirish haqida">
-            <div class="blood-drop" aria-hidden="true"></div>
-            <div class="blood-stat">
-              <strong>Birlik qon</strong>
-              <span>Bir qator tibbiy ehtiyojga yordam berishi mumkin</span>
+          <aside class="hero-panel" aria-label="Platforma statistikasi">
+            <div class="pulse-icon" aria-hidden="true">+</div>
+            <div>
+              <strong>Birlik hammasini o'zgartiradi</strong>
+              <span>Bir dona qon - bir nechta yordam imkoniyati</span>
             </div>
-          </div>
+            <div class="hero-metrics">
+              <div><strong>4</strong><span>qon guruhi</span></div>
+              <div><strong>24/7</strong><span>ma'lumot</span></div>
+              <div><strong>1</strong><span>jamoaviy maqsad</span></div>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section class="features section" id="overview">
+      <section class="requests section" id="requests">
+        <div class="container">
+          <div class="section-heading heading-row">
+            <div>
+              <p class="eyebrow">QON SO'ROVLARI</p>
+              <h2>Hozirgi ehtiyojlar</h2>
+            </div>
+            <a class="text-link" href="#request">E'lonni ko'rish &rarr;</a>
+          </div>
+
+          <div class="filters" aria-label="Ehtiyojlar filtri">
+            <button class="filter active" type="button" data-filter="all">Barchasi</button>
+            <button class="filter" type="button" data-filter="urgent">Shoshilinch</button>
+            <button class="filter" type="button" data-filter="A+">A+</button>
+            <button class="filter" type="button" data-filter="B+">B+</button>
+            <button class="filter" type="button" data-filter="O+">O+</button>
+            <button class="filter" type="button" data-filter="AB+">AB+</button>
+          </div>
+
+          <div class="request-grid" id="request-grid">
+            <article class="request-card" data-type="A+" data-urgent="true">
+              <div class="request-top">
+                <span class="blood-badge">A+</span>
+                <span class="urgent-badge">Shoshilinch</span>
+              </div>
+              <h3>Toshkent shahri</h3>
+              <p>Reja bo'yicha tibbiy yordam uchun qon birligi talab qilinmoqda.</p>
+              <div class="request-meta"><span>Demo e'lon</span><span>Bugun</span></div>
+            </article>
+            <article class="request-card" data-type="B+" data-urgent="false">
+              <div class="request-top">
+                <span class="blood-badge">B+</span>
+                <span class="normal-badge">Oddiy</span>
+              </div>
+              <h3>Samarqand viloyati</h3>
+              <p>Mahalliy donorlik markaziga yordam ko'rsatish uchun o'rtacha muddatli ehtiyoj.</p>
+              <div class="request-meta"><span>Demo e'lon</span><span>2 kun oldin</span></div>
+            </article>
+            <article class="request-card" data-type="O+" data-urgent="true">
+              <div class="request-top">
+                <span class="blood-badge">O+</span>
+                <span class="urgent-badge">Shoshilinch</span>
+              </div>
+              <h3>Farg'ona viloyati</h3>
+              <p>Shoshilinch tibbiy ehtiyoj uchun qon xizmati bilan bog'lanish talab qilinadi.</p>
+              <div class="request-meta"><span>Demo e'lon</span><span>4 soat oldin</span></div>
+            </article>
+            <article class="request-card" data-type="AB+" data-urgent="false">
+              <div class="request-top">
+                <span class="blood-badge">AB+</span>
+                <span class="normal-badge">Oddiy</span>
+              </div>
+              <h3>Buxoro viloyati</h3>
+              <p>Zaxira ehtiyojini to'ldirish uchun malakali qon xizmati bilan bog'lanish.</p>
+              <div class="request-meta"><span>Demo e'lon</span><span>Kecha</span></div>
+            </article>
+          </div>
+          <p class="demo-note">E'lonlar namuna sifatida ko'rsatilgan. Ro'yxatdan o'tirish yoki tibbiy baholash real tarzda amalga oshirilmaydi.</p>
+        </div>
+      </section>
+
+      <section class="how section" id="how">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">QON NIMA UCHUN MUHIM</p>
-            <h2>Sizning hissangiz kimdir uchun umid bo'lishi mumkin</h2>
+            <p class="eyebrow">QON TOPSHIRISH YO'LI</p>
+            <h2>Quyidagi tartibda harakat qiling</h2>
           </div>
-
-          <div class="feature-grid">
-            <article class="feature-card">
-              <div class="feature-icon" aria-hidden="true">01</div>
-              <h3>Jarrohlik va davolash</h3>
-              <p>Qon ba'zi rejalashtirilgan jarrohliklar va tibbiy davolashlarda ishlatilishi mumkin.</p>
+          <div class="steps-grid">
+            <article>
+              <span class="step-number">1</span>
+              <h3>Ma'lumotni tekshiring</h3>
+              <p>Ehtiyoj va hududni ko'ring, so'ngra qon markaziga murojaat qiling.</p>
             </article>
-            <article class="feature-card">
-              <div class="feature-icon" aria-hidden="true">02</div>
-              <h3>Favqulodda ehtiyojlar</h3>
-              <p>Baxtsiz hodisalar yoki boshqa favqulodda holatlar qon zaxirasini talab qilishi mumkin.</p>
+            <article>
+              <span class="step-number">2</span>
+              <h3>Mutaxassis bilan bog'laning</h3>
+              <p>Yaroqlilik, vaqt va kerakli hujjatlar haqida aniq ma'lumot oling.</p>
             </article>
-            <article class="feature-card">
-              <div class="feature-icon" aria-hidden="true">03</div>
-              <h3>Muntazam yordam</h3>
-              <p>Muayyan kasalliklari bor bemorlar uchun qon uchun muntazam ehtiyoj yuzaga kelishi mumkin.</p>
+            <article>
+              <span class="step-number">3</span>
+              <h3>Xavfsiz topshirish</h3>
+              <p>Faqat tasdiqlangan tashkilot va malakali mutaxassislar ko'rsatmasi bilan topshirin.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="about section" id="process">
-        <div class="container about-grid">
-          <div class="about-panel">
-            <span class="about-number">1</span>
-            <p>Yaqin qon markazini tanlang</p>
-            <span class="about-number">2</span>
-            <p>Savollarga javob bering va tibbiy tekshiruvdan o'ting</p>
-            <span class="about-number">3</span>
-            <p>Mutaxassis ko'rsatmasi bilan topshiring</p>
-          </div>
-          <div class="about-copy">
-            <p class="eyebrow">QON TOPSHIRISH JARAYONI</p>
-            <h2>Avval tekshiruv, keyin xabardor qaror</h2>
+      <section class="request section" id="request">
+        <div class="container request-layout">
+          <div class="request-copy">
+            <p class="eyebrow">JAMOA E'LONI</p>
+            <h2>Qon ehtiyojini boshqa foydalanuvchilar uchun ko'rsatish</h2>
             <p>
-              Qon topshirishga yaroqlilik yosh, sog'liq holati, davolanish,
-              oxirgi topshirish va boshqa mezonlarga qarab aniqlanadi.
-              Yakuniy qaror faqat malakali mahalliy qon xizmati mutaxassislari
-              tomonidan beriladi.
+              Ushbu demo shakl shaxsiy ma'lumot yoki sog'liq ma'lumotlarini
+              yig'maydi. U faqat e'lon ko'rinishini sinab ko'radi.
             </p>
           </div>
+          <form class="public-request-form" id="public-request-form">
+            <label>
+              Hudud
+              <input type="text" name="region" placeholder="Masalan: Toshkent" required />
+            </label>
+            <label>
+              Qon guruhi
+              <select name="bloodType" required>
+                <option value="">Tanlang</option>
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option>
+                <option>AB+</option><option>AB-</option>
+              </select>
+            </label>
+            <label>
+              Muhimlik
+              <select name="urgency" required>
+                <option value="Oddiy">Oddiy</option>
+                <option value="Shoshilinch">Shoshilinch</option>
+              </select>
+            </label>
+            <label>
+              Qisqa e'lon
+              <textarea name="note" rows="3" maxlength="180" placeholder="Masalan: Mahalliy qon markazida zaxira ehtiyojiga yordam" required></textarea>
+            </label>
+            <button class="button button-primary" type="submit">E'lonni ko'rish</button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
         </div>
       </section>
 
@@ -121,37 +201,21 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">TEZ-TEZ SO'RALADIGAN SAVOLLAR</p>
-            <h2>Oldin bilishni xohlaganlaringiz</h2>
+            <h2>Qon donorligi haqida</h2>
           </div>
           <div class="faq-grid">
             <details>
               <summary>Har kim qon topshira oladimi?</summary>
-              <p>Yo'q. Yaroqlilikni qon xizmati mutaxassislari sog'liq holati va mahalliy qoidalarga qarab tekshiradi.</p>
+              <p>Yo'q. Yaroqlilik yosh, sog'liq holati va mahalliy qon xizmati qoidalariga qarab mutaxassis tomonidan aniqlanadi.</p>
             </details>
             <details>
-              <summary>Qanday tayyorgarlik ko'rish kerak?</summary>
-              <p>Yetarli dam oling, hidratsiya saqlang va topshirishdan oldin qon markazi bergan ko'rsatmalarni bajaring.</p>
+              <summary>Bu platforma donorlikka ro'yxatga oladimi?</summary>
+              <p>Yo'q. Bu statik versiya ma'lumot va jamoaviy e'lonlarni namoyish qiladi. Real ro'yxatdan o'tish uchun backend va tasdiqlangan tashkilot kerak.</p>
             </details>
             <details>
-              <summary>Bu sayt donorlikka ro'yxatdan o'tkazadimi?</summary>
-              <p>Yo'q. Bu sayt faqat umumiy ma'lumot beradi. Ro'yxatdan o'tish va tekshiruv mahalliy qon xizmatida amalga oshiriladi.</p>
+              <summary>Qayerdan aniq ma'lumot olish kerak?</summary>
+              <p>Har doim mahalliy shifoxona yoki litsenziyalangan qon topshirish xizmatiga murojaat qiling.</p>
             </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section" id="donate">
-        <div class="container contact-card">
-          <div>
-            <p class="eyebrow">QON TOPSHIRISHGA TAYYORMISIZ?</p>
-            <h2>O'z hududingizdagi qon markazini toping</h2>
-          </div>
-          <div class="contact-action">
-            <p>
-              Yaroqlilik, ish vaqti hamda talablar haqida aniq ma'lumot olish
-              uchun mahalliy shifoxona yoki qon topshirish xizmatiga murojaat qiling.
-            </p>
-            <a class="button button-primary" href="#home">Bosh sahifaga qaytish</a>
           </div>
         </div>
       </section>
@@ -161,9 +225,9 @@
       <div class="container footer-inner">
         <a class="brand footer-brand" href="#home">
           <span class="brand-mark" aria-hidden="true">+</span>
-          <span>Hayot</span>
+          <span>Qon Hayoti</span>
         </a>
-        <p>&copy; <span id="year"></span>. Barcha huquqlar himoyalangan.</p>
+        <p>&copy; <span id="year"></span>. Xavfsiz va ishonchli ma'lumot uchun.</p>
       </div>
     </footer>
 

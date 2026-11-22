@@ -1,6 +1,8 @@
-# Qon donorligi sayti
+# Qon Hayoti - qon donorligi platformasi
 
-Qon topshirish haqida responsive, Uzbek tilidagi statik ma'lumot sayti.
+Uzbek tilidagi responsive qon donorligi jamoadan o'rnida ishlaydigan statik
+demo platforma. Sahifada qon ehtiyojlari, filterlar, jarayon va FAQ mavjud.
+Real shaxsiy ma'lumot, sog'liq ma'lumotlari yoki ro'yxatdan o'tish serverga yuborilmaydi.
 
 ## Ishga tushirish
 
