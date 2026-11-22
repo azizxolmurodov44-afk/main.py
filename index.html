@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Oddiy, zamonaviy va ishonchli veb-sayt."
+    />
+    <title>Oddiy sayt</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Asosiy navigatsiya">
+        <a class="brand" href="#home" aria-label="Bosh sahifa">
+          <span class="brand-mark" aria-hidden="true">O</span>
+          <span>Oddiy</span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Menyuni ochish"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#home">Bosh sahifa</a>
+          <a href="#features">Imkoniyatlar</a>
+          <a href="#about">Biz haqimizda</a>
+          <a class="nav-contact" href="#contact">Bog'lanish</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">ZAMONAVIY VA QULAY</p>
+            <h1>Oddiy, tushunarli va tez ishlaydigan sayt.</h1>
+            <p class="hero-text">
+              Ma'lumotni toza ko'rinishda taqdim etish, tashrif buyuruvchini
+              yo'naltirish va xizmatni ishonchli namoyish qilish uchun
+              tayyorlangan sahifa.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#contact">Bog'lanish</a>
+              <a class="button button-secondary" href="#features">Batafsil</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Sayt ko'rinishi">
+            <div class="browser-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="browser-body">
+              <div class="visual-heading"></div>
+              <div class="visual-line visual-line-wide"></div>
+              <div class="visual-line"></div>
+              <div class="visual-cards">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features section" id="features">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">ASOSIY IMKONIYATLAR</p>
+            <h2>Hammasi oddiy va ko'rinadigan joyda</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">01</div>
+              <h3>Toza dizayn</h3>
+              <p>Keraksiz bezaksiz, zamonaviy va oson o'qiladigan ko'rinish.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">02</div>
+              <h3>Mobil moslashuv</h3>
+              <p>Telefon, planshet va kompyuterda qulay ishlaydi.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">03</div>
+              <h3>Tez yuklanish</h3>
+              <p>Ortiqcha kutubxonalarsiz oddiy va samarali tuzilma.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-grid">
+          <div class="about-panel">
+            <span class="about-number">1</span>
+            <p>Oddiy kontent</p>
+            <span class="about-number">2</span>
+            <p>Qulay navigatsiya</p>
+            <span class="about-number">3</span>
+            <p>Ishonchli ko'rinish</p>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">BIZ HAQIMIZDA</p>
+            <h2>Foydalanuvchi uchun muhim narsaga e'tibor</h2>
+            <p>
+              Bu sayt aniq maqsadli, tushunarli va ishlatishga qulay
+              bosh sahifa sifatida tayyorlandi. Kontent va dizayn keyinchalik
+              yangilanishi mumkin.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-card">
+          <div>
+            <p class="eyebrow">BOGLANISH</p>
+            <h2>Xabaringizni yuboring</h2>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <label>
+              Ismingiz
+              <input
+                type="text"
+                name="name"
+                placeholder="Ismingizni yozing"
+                required
+              />
+            </label>
+            <label>
+              Xabaringiz
+              <textarea
+                name="message"
+                placeholder="Xabaringizni yozing"
+                rows="4"
+                required
+              ></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Yuborish</button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-mark" aria-hidden="true">O</span>
+          <span>Oddiy</span>
+        </a>
+        <p>&copy; <span id="year"></span>. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
