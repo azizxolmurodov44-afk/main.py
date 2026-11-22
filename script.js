@@ -1,7 +1,5 @@
 const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
-const contactForm = document.querySelector("#contact-form");
-const formStatus = document.querySelector("#form-status");
 const year = document.querySelector("#year");
 
 year.textContent = new Date().getFullYear();
@@ -20,11 +18,4 @@ navLinks.addEventListener("click", (event) => {
     navLinks.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
   }
-});
-
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = new FormData(contactForm).get("name").trim();
-  formStatus.textContent = `${name}, shakl muvaffaqiyatli to'ldirildi.`;
-  contactForm.reset();
 });

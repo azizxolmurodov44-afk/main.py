@@ -1,6 +1,6 @@
-# Oddiy sayt
+# Qon donorligi sayti
 
-Oddiy, responsive va Uzbek tilidagi statik veb-sayt.
+Qon topshirish haqida responsive, Uzbek tilidagi statik ma'lumot sayti.
 
 ## Ishga tushirish
 
