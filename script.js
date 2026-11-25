@@ -1,4 +1,4 @@
-const menuButton = document.querySelector(".menu-button");
+﻿const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
 const year = document.querySelector("#year");
 const filters = document.querySelectorAll(".filter");
