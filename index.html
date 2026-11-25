@@ -1,280 +1,287 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Qon donorligi jamoasi uchun so'rovlar, ehtiyojlar va donorlik ma'lumotlari."
-    />
-    <meta name="robots" content="noarchive, nosnippet" />
-    <meta name="googlebot" content="noarchive, nosnippet" />
-    <title>Qon Hayoti - Qon donorligi platformasi</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav container" aria-label="Asosiy navigatsiya">
-        <a class="brand" href="#home" aria-label="Bosh sahifa">
-          <span class="brand-mark" aria-hidden="true">+</span>
-          <span>Qon Hayoti</span>
-        </a>
-
-        <button
-          class="menu-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav-links"
-          aria-label="Menyuni ochish"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <div class="nav-links" id="nav-links">
-          <a href="#requests">Qon so'rovlari</a>
-          <a href="#how">Qanday ishlaydi</a>
-          <a href="#faq">Savollar</a>
-          <a class="nav-contact" href="#request">Ehtiyoj e'loni</a>
-          <button class="login-button" type="button" data-open-login>Kirish</button>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero" id="home">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">JAMOA. UMID. HAYOT.</p>
-            <h1>Bir dona qoningiz bilan hayotga umid bag'ishlang.</h1>
-            <p class="hero-text">
-              Hududingizdagi qon ehtiyojlarini ko'ring, donorlik jarayonini
-              biling va jamoaviy ma'lumotga ko'ra munosib markazga murojaat qiling.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#requests">Ehtiyojlarni ko'rish</a>
-              <a class="button button-secondary" href="#how">Qanday yordam berish</a>
-            </div>
-          </div>
-
-          <aside class="hero-panel" aria-label="Platforma statistikasi">
-            <div class="pulse-icon" aria-hidden="true">+</div>
-            <div>
-              <strong>Birlik hammasini o'zgartiradi</strong>
-              <span>Bir dona qon - bir nechta yordam imkoniyati</span>
-            </div>
-            <div class="hero-metrics">
-              <div><strong>4</strong><span>qon guruhi</span></div>
-              <div><strong>24/7</strong><span>ma'lumot</span></div>
-              <div><strong>1</strong><span>jamoaviy maqsad</span></div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="requests section" id="requests">
-        <div class="container">
-          <div class="section-heading heading-row">
-            <div>
-              <p class="eyebrow">QON SO'ROVLARI</p>
-              <h2>Hozirgi ehtiyojlar</h2>
-            </div>
-            <a class="text-link" href="#request">E'lonni ko'rish &rarr;</a>
-          </div>
-
-          <div class="filters" aria-label="Ehtiyojlar filtri">
-            <button class="filter active" type="button" data-filter="all">Barchasi</button>
-            <button class="filter" type="button" data-filter="urgent">Shoshilinch</button>
-            <button class="filter" type="button" data-filter="A+">A+</button>
-            <button class="filter" type="button" data-filter="B+">B+</button>
-            <button class="filter" type="button" data-filter="O+">O+</button>
-            <button class="filter" type="button" data-filter="AB+">AB+</button>
-          </div>
-
-          <div class="request-grid" id="request-grid">
-            <article class="request-card" data-type="A+" data-urgent="true">
-              <div class="request-top">
-                <span class="blood-badge">A+</span>
-                <span class="urgent-badge">Shoshilinch</span>
-              </div>
-              <h3>Toshkent shahri</h3>
-              <p>Reja bo'yicha tibbiy yordam uchun qon birligi talab qilinmoqda.</p>
-              <div class="request-meta"><span>Demo e'lon</span><span>Bugun</span></div>
-            </article>
-            <article class="request-card" data-type="B+" data-urgent="false">
-              <div class="request-top">
-                <span class="blood-badge">B+</span>
-                <span class="normal-badge">Oddiy</span>
-              </div>
-              <h3>Samarqand viloyati</h3>
-              <p>Mahalliy donorlik markaziga yordam ko'rsatish uchun o'rtacha muddatli ehtiyoj.</p>
-              <div class="request-meta"><span>Demo e'lon</span><span>2 kun oldin</span></div>
-            </article>
-            <article class="request-card" data-type="O+" data-urgent="true">
-              <div class="request-top">
-                <span class="blood-badge">O+</span>
-                <span class="urgent-badge">Shoshilinch</span>
-              </div>
-              <h3>Farg'ona viloyati</h3>
-              <p>Shoshilinch tibbiy ehtiyoj uchun qon xizmati bilan bog'lanish talab qilinadi.</p>
-              <div class="request-meta"><span>Demo e'lon</span><span>4 soat oldin</span></div>
-            </article>
-            <article class="request-card" data-type="AB+" data-urgent="false">
-              <div class="request-top">
-                <span class="blood-badge">AB+</span>
-                <span class="normal-badge">Oddiy</span>
-              </div>
-              <h3>Buxoro viloyati</h3>
-              <p>Zaxira ehtiyojini to'ldirish uchun malakali qon xizmati bilan bog'lanish.</p>
-              <div class="request-meta"><span>Demo e'lon</span><span>Kecha</span></div>
-            </article>
-          </div>
-          <p class="demo-note">E'lonlar namuna sifatida ko'rsatilgan. Ro'yxatdan o'tirish yoki tibbiy baholash real tarzda amalga oshirilmaydi.</p>
-        </div>
-      </section>
-
-      <section class="how section" id="how">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">QON TOPSHIRISH YO'LI</p>
-            <h2>Quyidagi tartibda harakat qiling</h2>
-          </div>
-          <div class="steps-grid">
-            <article>
-              <span class="step-number">1</span>
-              <h3>Ma'lumotni tekshiring</h3>
-              <p>Ehtiyoj va hududni ko'ring, so'ngra qon markaziga murojaat qiling.</p>
-            </article>
-            <article>
-              <span class="step-number">2</span>
-              <h3>Mutaxassis bilan bog'laning</h3>
-              <p>Yaroqlilik, vaqt va kerakli hujjatlar haqida aniq ma'lumot oling.</p>
-            </article>
-            <article>
-              <span class="step-number">3</span>
-              <h3>Xavfsiz topshirish</h3>
-              <p>Faqat tasdiqlangan tashkilot va malakali mutaxassislar ko'rsatmasi bilan topshirin.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="request section" id="request">
-        <div class="container request-layout">
-          <div class="request-copy">
-            <p class="eyebrow">JAMOA E'LONI</p>
-            <h2>Qon ehtiyojini boshqa foydalanuvchilar uchun ko'rsatish</h2>
-            <p>
-              Ushbu demo shakl shaxsiy ma'lumot yoki sog'liq ma'lumotlarini
-              yig'maydi. U faqat e'lon ko'rinishini sinab ko'radi.
-            </p>
-          </div>
-          <form class="public-request-form" id="public-request-form">
-            <label>
-              Hudud
-              <input type="text" name="region" placeholder="Masalan: Toshkent" required />
-            </label>
-            <label>
-              Qon guruhi
-              <select name="bloodType" required>
-                <option value="">Tanlang</option>
-                <option>A+</option><option>A-</option>
-                <option>B+</option><option>B-</option>
-                <option>O+</option><option>O-</option>
-                <option>AB+</option><option>AB-</option>
-              </select>
-            </label>
-            <label>
-              Muhimlik
-              <select name="urgency" required>
-                <option value="Oddiy">Oddiy</option>
-                <option value="Shoshilinch">Shoshilinch</option>
-              </select>
-            </label>
-            <label>
-              Qisqa e'lon
-              <textarea name="note" rows="3" maxlength="180" placeholder="Masalan: Mahalliy qon markazida zaxira ehtiyojiga yordam" required></textarea>
-            </label>
-            <button class="button button-primary" type="submit">E'lonni ko'rish</button>
-            <p class="form-status" id="form-status" role="status"></p>
-          </form>
-        </div>
-      </section>
-
-      <section class="faq section" id="faq">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">TEZ-TEZ SO'RALADIGAN SAVOLLAR</p>
-            <h2>Qon donorligi haqida</h2>
-          </div>
-          <div class="faq-grid">
-            <details>
-              <summary>Har kim qon topshira oladimi?</summary>
-              <p>Yo'q. Yaroqlilik yosh, sog'liq holati va mahalliy qon xizmati qoidalariga qarab mutaxassis tomonidan aniqlanadi.</p>
-            </details>
-            <details>
-              <summary>Bu platforma donorlikka ro'yxatga oladimi?</summary>
-              <p>Yo'q. Bu statik versiya ma'lumot va jamoaviy e'lonlarni namoyish qiladi. Real ro'yxatdan o'tish uchun backend va tasdiqlangan tashkilot kerak.</p>
-            </details>
-            <details>
-              <summary>Qayerdan aniq ma'lumot olish kerak?</summary>
-              <p>Har doim mahalliy shifoxona yoki litsenziyalangan qon topshirish xizmatiga murojaat qiling.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-inner">
-        <a class="brand footer-brand" href="#home">
-          <span class="brand-mark" aria-hidden="true">+</span>
-          <span>Qon Hayoti</span>
-        </a>
-        <p>&copy; <span id="year"></span>. Xavfsiz va ishonchli ma'lumot uchun.</p>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111a3b">
+<title>Python Quiz — 120 ta interaktiv test</title>
+<style>
+:root{
+  --ink:#17213e;--muted:#74809b;--line:#e8ebf4;--paper:#fff;--bg:#f5f6fc;
+  --blue:#5865f2;--blue-dark:#4652dc;--blue-soft:#eef0ff;--violet:#8b5cf6;
+  --green:#168653;--green-soft:#eaf8f0;--red:#cf4655;--red-soft:#fff0f1;
+  --amber:#a66b12;--amber-soft:#fff7e7;--shadow:0 18px 50px rgba(35,45,92,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 8% 18%,#edf0ff 0,transparent 26rem),radial-gradient(circle at 93% 42%,#f0eaff 0,transparent 23rem),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;min-height:100vh}
+button{font:inherit}
+.hero{position:relative;overflow:hidden;background:linear-gradient(115deg,#111a3b 0%,#202e68 58%,#4d4fc4 100%);color:#fff;padding:25px 22px 54px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero:before{width:440px;height:440px;right:-90px;top:-280px;border:1px solid #ffffff20;box-shadow:0 0 0 48px #ffffff08,0 0 0 96px #ffffff06}
+.hero:after{width:250px;height:250px;right:22%;bottom:-210px;background:#9b8cff22;filter:blur(2px)}
+.container{width:min(1160px,100%);margin-inline:auto;position:relative;z-index:1}
+.navline{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:800;letter-spacing:.02em}
+.brand-mark{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#8b9bff,#6559eb);box-shadow:0 8px 22px #11133d88;font-weight:900;font-size:17px;letter-spacing:-.08em}
+.nav-tag{display:flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid #ffffff24;background:#ffffff10;border-radius:99px;color:#e8ebff;font-size:12px;font-weight:700;backdrop-filter:blur(10px)}
+.live-dot{width:7px;height:7px;background:#73e0ac;border-radius:50%;box-shadow:0 0 0 4px #73e0ac22}
+.hero-content{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-top:34px}
+.hero-copy{max-width:690px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#cbd2ff;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px}
+.eyebrow:before{content:"";width:22px;height:2px;background:#9ca8ff;border-radius:2px}
+h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.055em;line-height:1.06;margin:0 0 13px;font-weight:850}
+.hero-copy p{margin:0;color:#d0d7f4;font-size:15px;line-height:1.65;max-width:600px}
+.hero-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.hero-chip{border:1px solid #ffffff24;background:#ffffff0d;padding:8px 12px;border-radius:10px;color:#e6e9ff;font-size:12px;font-weight:650}
+.code-art{width:245px;flex:0 0 245px;transform:rotate(3deg);padding:18px;border-radius:20px;border:1px solid #ffffff2b;background:linear-gradient(145deg,#ffffff1e,#ffffff0b);box-shadow:0 24px 55px #080e2d55;backdrop-filter:blur(12px)}
+.code-top{display:flex;gap:5px;margin-bottom:19px}.code-top i{width:7px;height:7px;border-radius:50%;background:#ffffff70}.code-line{height:7px;border-radius:99px;background:#ffffff30;margin:11px 0}.code-line:nth-child(2){width:75%;background:#aab2ff}.code-line:nth-child(3){width:92%}.code-line:nth-child(4){width:55%;background:#9ce1bf}.code-line:nth-child(5){width:68%}.code-line:nth-child(6){width:42%;background:#ffcf8b}
+main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:relative;z-index:2}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:17px}
+.stat{display:flex;align-items:center;gap:13px;padding:16px 18px;border:1px solid #eaecf5;background:#ffffffed;box-shadow:0 8px 24px #28346a0c;border-radius:17px;min-width:0}
+.stat-icon{width:39px;height:39px;flex:0 0 39px;border-radius:12px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue)}
+.stat-icon svg{width:19px;height:19px}.stat small{display:block;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.02em;margin-bottom:3px}.stat strong{font-size:18px;letter-spacing:-.03em}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:17px;align-items:start}
+.quiz-card,.side-card,.results-card{background:var(--paper);border:1px solid #e9ebf4;border-radius:23px;box-shadow:var(--shadow)}
+.quiz-card{padding:clamp(22px,3.5vw,36px);min-width:0}
+.qmeta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}
+.topic-pill{display:inline-flex;align-items:center;gap:8px;max-width:75%;padding:8px 12px;border-radius:9px;background:var(--blue-soft);color:#4c56cf;font-size:11px;font-weight:800;letter-spacing:.015em}
+.topic-pill:before{content:"";width:6px;height:6px;border-radius:50%;background:#747dff;flex:0 0 6px}
+.qcount{white-space:nowrap;font-size:12px;font-weight:800;color:#9099ae;font-variant-numeric:tabular-nums}
+.question{margin:0 0 25px;font-size:clamp(21px,3vw,28px);line-height:1.36;letter-spacing:-.035em;font-weight:800;scroll-margin-top:24px}
+.options{display:grid;gap:11px}
+.option{position:relative;display:flex;align-items:center;gap:13px;width:100%;min-height:62px;padding:13px 16px;border:1.5px solid #e8ebf3;border-radius:15px;background:#fff;cursor:pointer;text-align:left;transition:border-color .16s,background .16s,transform .16s,box-shadow .16s;}
+.option:hover{border-color:#aab1ff;background:#fafaff;transform:translateY(-1px);box-shadow:0 7px 19px #5865f210}
+.option.selected{border-color:var(--blue);background:linear-gradient(100deg,#f0f1ff,#fafaff);box-shadow:0 0 0 3px #5865f213}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.letter{display:grid;place-items:center;width:33px;height:33px;flex:0 0 33px;border-radius:10px;background:#f1f3f8;color:#67728b;font-weight:850;font-size:12px;transition:.16s}
+.option.selected .letter{background:var(--blue);color:white}
+.opttext{font-size:14px;line-height:1.5;color:#303b58;font-weight:560;flex:1}
+.option-check{width:21px;height:21px;flex:0 0 21px;border:1.5px solid #dfe3ed;border-radius:50%;display:grid;place-items:center;color:transparent;font-size:12px;font-weight:900}
+.option.selected .option-check{border-color:var(--blue);background:var(--blue);color:white}
+.action-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px;padding-top:21px;border-top:1px solid #eff0f5}
+.keyboard-tip{font-size:11px;color:#9aa2b4;line-height:1.5}.key{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border:1px solid #e2e5ee;border-bottom-width:2px;border-radius:5px;color:#6e7890;background:#fafbfe;font-weight:800;margin-inline:2px}
+.actions{display:flex;gap:9px}
+.btn{border:0;border-radius:12px;padding:12px 17px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:800;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s;white-space:nowrap}
+.btn:hover:not(:disabled){transform:translateY(-1px)}.btn:active:not(:disabled){transform:translateY(0)}.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn svg{width:16px;height:16px}
+.btn-secondary{background:#f0f2f8;color:#4e5871}.btn-secondary:hover:not(:disabled){background:#e7eaf3}
+.btn-primary{background:linear-gradient(135deg,#6671ff,#535de8);color:white;box-shadow:0 8px 18px #5865f22b}.btn-primary:hover:not(:disabled){box-shadow:0 11px 22px #5865f23d}
+.btn-finish{width:100%;margin-top:15px;background:#18244c;color:#fff;padding:13px}.btn-finish:hover{background:#26366d}
+.sidebar{display:grid;gap:14px}
+.side-card{padding:19px}
+.side-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.side-heading h3{font-size:14px;margin:0;font-weight:850;letter-spacing:-.015em}.side-heading span{font-size:11px;color:var(--muted);font-weight:700}
+.progress-numbers{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}.progress-numbers strong{font-size:22px;letter-spacing:-.04em}.progress-numbers span{font-size:11px;color:var(--muted);font-weight:700}
+.track{height:8px;background:#eff1f7;border-radius:99px;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,#6671ff,#9a74ff);border-radius:99px;transition:width .25s}
+.progress-note{font-size:11px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+.gridnav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;max-height:340px;overflow-y:auto;padding:2px 3px 4px;scrollbar-width:thin;scrollbar-color:#d9def0 transparent}
+.navnum{height:36px;border:1px solid #e9ebf3;background:#fafbfe;color:#65708b;border-radius:9px;font-size:11px;font-weight:750;cursor:pointer;transition:.15s}
+.navnum:hover{border-color:#aab2ff;color:#4d58de;background:#f5f6ff}.navnum.current{color:#fff;border-color:#5e69f5;background:#5e69f5;box-shadow:0 4px 10px #5865f230}.navnum.done:not(.current){background:#eaf8f0;border-color:#c9ead6;color:#168653}.navnum.done.current{background:#5e69f5;color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:13px;color:#8892a8;font-size:10px;font-weight:650}.legend span{display:flex;align-items:center;gap:5px}.dot{width:7px;height:7px;border-radius:50%;background:#dfe3ed}.dot.blue{background:#5e69f5}.dot.green{background:#4eb782}
+.tip-box{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:13px;background:#f7f7ff;color:#707b9b;font-size:11px;line-height:1.55}.tip-box svg{width:16px;height:16px;flex:0 0 16px;color:#747cf0;margin-top:1px}
+#results{display:none}.results-card{padding:clamp(22px,4vw,38px)}
+.results-banner{position:relative;overflow:hidden;padding:27px;border-radius:19px;background:linear-gradient(115deg,#17234d,#4c53bd);color:#fff}
+.results-banner:after{content:"";position:absolute;width:240px;height:240px;right:-100px;top:-130px;border-radius:50%;border:1px solid #ffffff25;box-shadow:0 0 0 35px #ffffff08,0 0 0 70px #ffffff06}
+.score-head{position:relative;z-index:1;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.score-circle{--pct:0%;width:118px;height:118px;flex:0 0 118px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#8c9cff var(--pct),#ffffff24 0);position:relative}
+.score-circle:before{content:"";position:absolute;inset:9px;background:#202d65;border:1px solid #ffffff18;border-radius:50%}.score-circle strong{position:relative;font-size:27px;letter-spacing:-.04em}
+.score-info h2{margin:0 0 7px;font-size:27px;letter-spacing:-.04em}.score-info p{margin:0;color:#d4dcff;font-size:13px;line-height:1.5}
+.result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:18px 0 27px}
+.result-stat{padding:16px;border:1px solid var(--line);border-radius:15px;background:#fff}.result-stat small{display:block;color:var(--muted);font-size:11px;font-weight:700;margin-bottom:6px}.result-stat strong{font-size:22px;letter-spacing:-.04em}.correct{color:var(--green)}.wrong{color:var(--red)}.unanswered{color:var(--amber)}
+.review-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 13px}.review-head h3{margin:0;font-size:18px;letter-spacing:-.025em}
+.review-filter{display:flex;gap:6px;flex-wrap:wrap}.filter-btn{border:1px solid #e6e9f2;background:#fff;border-radius:99px;padding:8px 12px;color:#68738c;font-size:11px;font-weight:750;cursor:pointer}.filter-btn.active{background:var(--blue-soft);border-color:#cdd2ff;color:#4c56d7}
+.review-list{display:grid;gap:9px}.review-item{padding:16px;border:1px solid #eaedf4;border-radius:15px;background:#fff}.review-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.review-item h4{margin:0 0 10px;font-size:14px;line-height:1.5}.status-pill{display:inline-flex;white-space:nowrap;border-radius:99px;padding:5px 8px;font-size:10px;font-weight:850}.status-pill.ok{background:var(--green-soft);color:var(--green)}.status-pill.bad{background:var(--red-soft);color:var(--red)}.status-pill.empty{background:var(--amber-soft);color:var(--amber)}.review-item p{margin:5px 0 0;font-size:12px;line-height:1.55;color:#64708a}.review-item p strong{color:#35415e}.review-item p.answer-right strong{color:var(--green)}.empty-state{padding:25px;text-align:center;border:1px dashed #dfe3ef;border-radius:15px;color:#7c87a0;font-size:13px}
+.bottom-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid #eff0f5}
+.modal-backdrop{position:fixed;inset:0;z-index:20;background:#11193699;display:grid;place-items:center;padding:18px;backdrop-filter:blur(5px)}.modal-backdrop.hidden{display:none}.modal{width:min(420px,100%);padding:25px;border-radius:21px;background:#fff;box-shadow:0 24px 70px #0c143b40}.modal-icon{width:44px;height:44px;border-radius:14px;background:#fff5e4;color:#b7791f;display:grid;place-items:center;font-size:21px;margin-bottom:13px}.modal h3{margin:0 0 7px;font-size:20px;letter-spacing:-.03em}.modal p{margin:0;color:#75809a;font-size:13px;line-height:1.6}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:21px}
+@media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr) 260px}.code-art{width:190px;flex-basis:190px}.gridnav{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:720px){.hero{padding:18px 17px 47px}.hero-content{padding-top:29px}.code-art{display:none}.hero-copy p{font-size:13px}.hero-chip{font-size:11px;padding:7px 9px}main{padding-inline:13px}.stats{gap:8px}.stat{padding:12px;gap:9px}.stat-icon{width:33px;height:33px;flex-basis:33px}.stat small{font-size:10px}.stat strong{font-size:16px}.layout{grid-template-columns:1fr}.sidebar{grid-row:2}.side-card{padding:16px}.gridnav{grid-template-columns:repeat(10,minmax(0,1fr));max-height:190px}.quiz-card{padding:21px}.action-row{align-items:stretch;flex-direction:column}.keyboard-tip{text-align:center}.actions{width:100%}.actions .btn{flex:1}.question{font-size:22px}}
+@media(max-width:430px){.brand{font-size:12px}.brand-mark{width:36px;height:36px}.nav-tag{font-size:10px;padding:8px 9px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{display:block;padding:10px}.stat-icon{margin-bottom:7px;width:30px;height:30px}.stat small{min-height:25px;line-height:1.25}.stat strong{font-size:15px}.qmeta{align-items:flex-start;flex-direction:column;gap:9px;margin-bottom:18px}.topic-pill{max-width:100%}.qcount{align-self:flex-end;margin-top:-29px}.option{padding:11px;min-height:57px;gap:9px}.letter{width:30px;height:30px;flex-basis:30px}.opttext{font-size:13px}.btn{padding:12px 10px;font-size:12px}.gridnav{grid-template-columns:repeat(8,minmax(0,1fr))}.result-stats{gap:7px}.result-stat{padding:11px}.result-stat small{font-size:10px}.result-stat strong{font-size:18px}.results-banner{padding:20px}.score-circle{width:94px;height:94px;flex-basis:94px}.score-info h2{font-size:22px}.review-top{display:block}.status-pill{margin:0 0 9px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="container">
+    <div class="navline">
+      <div class="brand"><div class="brand-mark">Py</div><span>PYTHON QUIZ</span></div>
+      <div class="nav-tag"><i class="live-dot"></i> Interaktiv test</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-copy">
+        <div class="eyebrow">Bilimingizni sinab ko‘ring</div>
+        <h1>Python dasturlash<br>asoslari</h1>
+        <p>12 ta mavzu bo‘yicha bilimlaringizni tekshiring. Har bir savolga javob tanlang va yakunda batafsil natijangizni ko‘ring.</p>
+        <div class="hero-chips"><span class="hero-chip">✦ 120 ta savol</span><span class="hero-chip">◈ 4 ta variant</span><span class="hero-chip">✓ Yakuniy tahlil</span></div>
       </div>
-    </footer>
-
-    <dialog class="login-dialog" id="login-dialog" aria-labelledby="login-title">
-      <button class="dialog-close" type="button" data-close-login aria-label="Yopish">&times;</button>
-      <p class="eyebrow">HISOB KIRISHI</p>
-      <h2 id="login-title">Xavfsiz kirish rejimi</h2>
-      <p>
-        Hozirgi statik sayt shaxsiy ma'lumotlarni saqlamaydi. Hisob va ro'yxatdan
-        o'tish real backend ulanishidan keyin xavfsiz ishga tushiriladi.
-      </p>
-      <form class="demo-login-form" id="demo-login-form">
-        <label>
-          E-pochta
-          <input type="email" name="email" placeholder="name@example.com" required />
-        </label>
-        <button class="button button-primary" type="submit">Kirish rejimini ko'rish</button>
-        <p class="form-status" id="login-status" role="status"></p>
-      </form>
-    </dialog>
-
-    <aside class="ai-assistant" aria-label="Sayt ichidagi yordamchi">
-      <button class="ai-toggle" type="button" aria-expanded="false" aria-controls="ai-panel">
-        <span aria-hidden="true">?</span>
-        Yordamchi
-      </button>
-      <div class="ai-panel" id="ai-panel" hidden>
-        <div class="ai-header">
-          <div>
-            <strong>Sayt yordamchisi</strong>
-            <span>Faqat ochiq sahifa ma'lumotlari</span>
+      <div class="code-art" aria-hidden="true"><div class="code-top"><i></i><i></i><i></i></div><div class="code-line" style="width:39%"></div><div class="code-line"></div><div class="code-line"></div><div class="code-line"></div><div class="code-line"></div></div>
+    </div>
+  </div>
+</header>
+<main>
+  <div id="testView">
+    <div class="stats">
+      <div class="stat"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5h12M8 12h12M8 19h12M3 5h.01M3 12h.01M3 19h.01"/></svg></div><div><small>Jami savollar</small><strong>120</strong></div></div>
+      <div class="stat"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 9.2 17 19 7"/></svg></div><div><small>Belgilangan</small><strong id="answeredStat">0 / 120</strong></div></div>
+      <div class="stat"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><small>Hozirgi savol</small><strong id="currentStat">1 / 120</strong></div></div>
+    </div>
+    <div class="layout">
+      <section class="quiz-card" id="quizCard" aria-live="polite">
+        <div class="qmeta"><span class="topic-pill" id="sectionTag"></span><span class="qcount" id="qCount"></span></div>
+        <h2 class="question" id="questionText" tabindex="-1"></h2>
+        <div class="options" id="options"></div>
+        <div class="action-row">
+          <div class="keyboard-tip">Tezkor tanlash: <span class="key">1</span><span class="key">2</span><span class="key">3</span><span class="key">4</span> · O‘tish: <span class="key">←</span><span class="key">→</span></div>
+          <div class="actions">
+            <button class="btn btn-secondary" id="prevBtn" type="button" onclick="move(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg> Oldingi</button>
+            <button class="btn btn-primary" id="nextBtn" type="button" onclick="move(1)">Keyingi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
           </div>
-          <button type="button" class="ai-close" aria-label="Yopish">&times;</button>
         </div>
-        <div class="ai-messages" id="ai-messages" aria-live="polite">
-          <p class="ai-message ai-bot">Nimani qidirishni xohlaysiz? Masalan: “qon guruhlari”, “qanday topshirish”, “savollar”.</p>
-        </div>
-        <form class="ai-form" id="ai-form">
-          <input type="search" name="query" placeholder="Saytdan qidirish..." aria-label="Saytdan qidirish" required />
-          <button type="submit" aria-label="Qidirish">&rarr;</button>
-        </form>
-      </div>
-    </aside>
+      </section>
+      <aside class="sidebar">
+        <section class="side-card">
+          <div class="side-heading"><h3>Test jarayoni</h3><span id="progressText">0%</span></div>
+          <div class="progress-numbers"><strong id="progressCount">0 <span style="font-size:12px;color:#9aa3b7;font-weight:650">/ 120</span></strong><span>javob berildi</span></div>
+          <div class="track"><div class="bar" id="progressBar"></div></div>
+          <p class="progress-note" id="remainingHint">Boshlash uchun javob variantini tanlang.</p>
+        </section>
+        <section class="side-card">
+          <div class="side-heading"><h3>Savollar xaritasi</h3><span>120 savol</span></div>
+          <div class="gridnav" id="numberGrid" aria-label="Savol raqamlari"></div>
+          <div class="legend"><span><i class="dot blue"></i>Hozirgi</span><span><i class="dot green"></i>Javoblangan</span><span><i class="dot"></i>Bo‘sh</span></div>
+          <button class="btn btn-finish" type="button" onclick="finishQuiz()">Testni yakunlash <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></button>
+        </section>
+        <div class="tip-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><span>Javobni o‘zgartirish mumkin. Belgilangan javoblar test yakunlanguncha saqlanib turadi.</span></div>
+      </aside>
+    </div>
+  </div>
+  <section id="results">
+    <div class="results-card">
+      <div class="results-banner"><div class="score-head"><div class="score-circle" id="scoreCircle"><strong id="scorePercent">0%</strong></div><div class="score-info"><h2 id="resultTitle">Natijangiz tayyor!</h2><p id="resultSummary"></p></div></div></div>
+      <div class="result-stats"><div class="result-stat"><small>To‘g‘ri javoblar</small><strong class="correct" id="correctCount">0</strong></div><div class="result-stat"><small>Noto‘g‘ri javoblar</small><strong class="wrong" id="wrongCount">0</strong></div><div class="result-stat"><small>Javobsiz savollar</small><strong class="unanswered" id="emptyCount">0</strong></div></div>
+      <div class="review-head"><h3>Javoblar tahlili</h3><div class="review-filter"><button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">Barchasi</button><button class="filter-btn" data-filter="wrong" onclick="setFilter('wrong',this)">Xatolar</button><button class="filter-btn" data-filter="empty" onclick="setFilter('empty',this)">Javobsiz</button></div></div>
+      <div class="review-list" id="reviewList"></div>
+      <div class="bottom-actions"><button class="btn btn-primary" type="button" onclick="restartQuiz()">↻ Qayta boshlash</button><button class="btn btn-secondary" type="button" onclick="window.print()">Natijani chop etish</button></div>
+    </div>
+  </section>
+</main>
+<div class="modal-backdrop hidden" id="finishModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal"><div class="modal-icon">!</div><h3 id="modalTitle">Testni yakunlaysizmi?</h3><p id="modalText"></p><div class="modal-actions"><button class="btn btn-secondary" type="button" onclick="closeModal()">Davom etish</button><button class="btn btn-primary" type="button" onclick="confirmFinish()">Yakunlash</button></div></div>
+</div>
+<script>
+const QUESTIONS = [{"id":1,"section":"Python tarixi va umumiy tushunchalar","text":"Python dasturlash tilining muallifi kim?","options":[{"key":"A","text":"Guido van Rossum"},{"key":"B","text":"Dennis Ritchie"},{"key":"C","text":"James Gosling"},{"key":"D","text":"Linus Torvalds"}],"answer":"A"},{"id":2,"section":"Python tarixi va umumiy tushunchalar","text":"Python qaysi turdagi dasturlash tiliga kiradi?","options":[{"key":"A","text":"Faqat belgilash tili"},{"key":"B","text":"Umumiy maqsadli dasturlash tili"},{"key":"C","text":"Faqat ma’lumotlar bazasi tili"},{"key":"D","text":"Faqat operatsion tizim"}],"answer":"B"},{"id":3,"section":"Python tarixi va umumiy tushunchalar","text":"Python fayllarining odatiy kengaytmasi qaysi?","options":[{"key":"A","text":".html"},{"key":"B","text":".java"},{"key":"C","text":".py"},{"key":"D","text":".cpp"}],"answer":"C"},{"id":4,"section":"Python tarixi va umumiy tushunchalar","text":"Python’da kod bajaruvchi asosiy dastur nima deb ataladi?","options":[{"key":"A","text":"Kompilyator jadvali"},{"key":"B","text":"Python interpretatori"},{"key":"C","text":"Brauzer"},{"key":"D","text":"Matn muharriri"}],"answer":"B"},{"id":5,"section":"Python tarixi va umumiy tushunchalar","text":"Python nomi qaysi manbadan olingan?","options":[{"key":"A","text":"Ilon nomidan"},{"key":"B","text":"Monty Python komediya guruhidan"},{"key":"C","text":"Protsessor nomidan"},{"key":"D","text":"Matematik olim nomidan"}],"answer":"B"},{"id":6,"section":"Python tarixi va umumiy tushunchalar","text":"Python qaysi sohada ishlatilishi mumkin?","options":[{"key":"A","text":"Ma’lumotlar tahlilida"},{"key":"B","text":"Faqat rasm chizishda"},{"key":"C","text":"Faqat matn terishda"},{"key":"D","text":"Faqat elektr montajida"}],"answer":"A"},{"id":7,"section":"Python tarixi va umumiy tushunchalar","text":"Python’da veb-ilovalar yaratishga yordam beruvchi freymvork qaysi?","options":[{"key":"A","text":"Django"},{"key":"B","text":"Excel"},{"key":"C","text":"PowerPoint"},{"key":"D","text":"Git"}],"answer":"A"},{"id":8,"section":"Python tarixi va umumiy tushunchalar","text":"NumPy kutubxonasi ko‘proq nima uchun ishlatiladi?","options":[{"key":"A","text":"Massivlar va sonli hisoblashlar"},{"key":"B","text":"Audio yozish"},{"key":"C","text":"Veb sahifa bezash"},{"key":"D","text":"Fayl siqish"}],"answer":"A"},{"id":9,"section":"Python tarixi va umumiy tushunchalar","text":"Python’da buyruqlar odatda qanday ajratiladi?","options":[{"key":"A","text":"Faqat vergul bilan"},{"key":"B","text":"Yangi satr va bloklar orqali"},{"key":"C","text":"Faqat nuqtali vergul bilan"},{"key":"D","text":"Faqat qavs bilan"}],"answer":"B"},{"id":10,"section":"Python tarixi va umumiy tushunchalar","text":"Python’ning muhim xususiyatlaridan biri qaysi?","options":[{"key":"A","text":"O‘qilishi qulay sintaksis"},{"key":"B","text":"Faqat bitta platformada ishlashi"},{"key":"C","text":"O‘zgaruvchilarni qo‘llamasligi"},{"key":"D","text":"Faqat ikkilik kod yozilishi"}],"answer":"A"},{"id":11,"section":"print(), input() va ma’lumot turlari","text":"print('Assalom') nima bajaradi?","options":[{"key":"A","text":"Matnni ekranga chiqaradi"},{"key":"B","text":"Matnni kiritadi"},{"key":"C","text":"Dasturni yopadi"},{"key":"D","text":"O‘zgaruvchi yaratadi"}],"answer":"A"},{"id":12,"section":"print(), input() va ma’lumot turlari","text":"input() funksiyasi odatda qaysi turdagi qiymat qaytaradi?","options":[{"key":"A","text":"int"},{"key":"B","text":"float"},{"key":"C","text":"str"},{"key":"D","text":"list"}],"answer":"C"},{"id":13,"section":"print(), input() va ma’lumot turlari","text":"n = input() dan keyin n ning turi odatda qanday bo‘ladi?","options":[{"key":"A","text":"str"},{"key":"B","text":"int"},{"key":"C","text":"bool"},{"key":"D","text":"float"}],"answer":"A"},{"id":14,"section":"print(), input() va ma’lumot turlari","text":"type(8) natijasi qaysi tur?","options":[{"key":"A","text":"float"},{"key":"B","text":"int"},{"key":"C","text":"str"},{"key":"D","text":"bool"}],"answer":"B"},{"id":15,"section":"print(), input() va ma’lumot turlari","text":"type(8.0) natijasi qaysi tur?","options":[{"key":"A","text":"int"},{"key":"B","text":"float"},{"key":"C","text":"complex"},{"key":"D","text":"str"}],"answer":"B"},{"id":16,"section":"print(), input() va ma’lumot turlari","text":"print(3, 5, sep=':') natijasi nima?","options":[{"key":"A","text":"35"},{"key":"B","text":"3 5"},{"key":"C","text":"3:5"},{"key":"D","text":"3,5"}],"answer":"C"},{"id":17,"section":"print(), input() va ma’lumot turlari","text":"print('Hi', end='!') qanday matn chiqaradi?","options":[{"key":"A","text":"!Hi"},{"key":"B","text":"Hi!"},{"key":"C","text":"Hi va yangi satr"},{"key":"D","text":"Hech narsa"}],"answer":"B"},{"id":18,"section":"print(), input() va ma’lumot turlari","text":"int('24') natijasi nima?","options":[{"key":"A","text":"'24'"},{"key":"B","text":"24 butun soni"},{"key":"C","text":"24.0"},{"key":"D","text":"Xatolik"}],"answer":"B"},{"id":19,"section":"print(), input() va ma’lumot turlari","text":"str(6) nimani qaytaradi?","options":[{"key":"A","text":"6 sonini"},{"key":"B","text":"'6' satrini"},{"key":"C","text":"6.0 ni"},{"key":"D","text":"False"}],"answer":"B"},{"id":20,"section":"print(), input() va ma’lumot turlari","text":"bool(0) natijasi nima?","options":[{"key":"A","text":"True"},{"key":"B","text":"False"},{"key":"C","text":"None"},{"key":"D","text":"0.0"}],"answer":"B"},{"id":21,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"Qaysi nom o‘zgaruvchi uchun to‘g‘ri?","options":[{"key":"A","text":"2qiymat"},{"key":"B","text":"qiymat-son"},{"key":"C","text":"qiymat_son"},{"key":"D","text":"for"}],"answer":"C"},{"id":22,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"Python’da katta va kichik harflar farqlanadimi?","options":[{"key":"A","text":"Yo‘q"},{"key":"B","text":"Ha"},{"key":"C","text":"Faqat sonlarda"},{"key":"D","text":"Faqat funksiyalarda"}],"answer":"B"},{"id":23,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"O‘zgaruvchi qiymati qanday belgilanadi?","options":[{"key":"A","text":"=="},{"key":"B","text":"="},{"key":"C","text":"!="},{"key":"D","text":"<="}],"answer":"B"},{"id":24,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"Bir qatorli izoh qaysi belgi bilan boshlanadi?","options":[{"key":"A","text":"//"},{"key":"B","text":"#"},{"key":"C","text":"<!--"},{"key":"D","text":"**"}],"answer":"B"},{"id":25,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"Konstantalar odatda qanday yoziladi?","options":[{"key":"A","text":"UPPER_CASE"},{"key":"B","text":"camelCase"},{"key":"C","text":"kebab-case"},{"key":"D","text":"Faqat kichik harfda"}],"answer":"A"},{"id":26,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"float('2.75') natijasi qaysi?","options":[{"key":"A","text":"2"},{"key":"B","text":"2.75"},{"key":"C","text":"'2.75'"},{"key":"D","text":"Xatolik"}],"answer":"B"},{"id":27,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"int(4.9) natijasi nima?","options":[{"key":"A","text":"5"},{"key":"B","text":"4"},{"key":"C","text":"4.9"},{"key":"D","text":"Xatolik"}],"answer":"B"},{"id":28,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"bool('') natijasi nima?","options":[{"key":"A","text":"True"},{"key":"B","text":"False"},{"key":"C","text":"0"},{"key":"D","text":"Xatolik"}],"answer":"B"},{"id":29,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"Quyidagilardan qaysi biri bo‘sh qiymat hisoblanadi?","options":[{"key":"A","text":"'0'"},{"key":"B","text":"[0]"},{"key":"C","text":"''"},{"key":"D","text":"'False'"}],"answer":"C"},{"id":30,"section":"O‘zgaruvchilar, nomlash va konvertatsiya","text":"Python’da bir nechta qiymatni bitta o‘zgaruvchiga tuple qilib berish mumkinmi?","options":[{"key":"A","text":"Ha"},{"key":"B","text":"Yo‘q"},{"key":"C","text":"Faqat matnda"},{"key":"D","text":"Faqat float’da"}],"answer":"A"},{"id":31,"section":"String va uning metodlari","text":"s = 'Dastur'; s[0] natijasi nima?","options":[{"key":"A","text":"D"},{"key":"B","text":"a"},{"key":"C","text":"r"},{"key":"D","text":"Xatolik"}],"answer":"A"},{"id":32,"section":"String va uning metodlari","text":"s = 'Dastur'; s[-1] natijasi nima?","options":[{"key":"A","text":"D"},{"key":"B","text":"u"},{"key":"C","text":"r"},{"key":"D","text":"s"}],"answer":"C"},{"id":33,"section":"String va uning metodlari","text":"'Python'[1:4] natijasi qaysi?","options":[{"key":"A","text":"Pyt"},{"key":"B","text":"yth"},{"key":"C","text":"tho"},{"key":"D","text":"ython"}],"answer":"B"},{"id":34,"section":"String va uning metodlari","text":"'Salom'[:2] natijasi nima?","options":[{"key":"A","text":"Sa"},{"key":"B","text":"al"},{"key":"C","text":"Sal"},{"key":"D","text":"lom"}],"answer":"A"},{"id":35,"section":"String va uning metodlari","text":"'Salom'[2:] natijasi nima?","options":[{"key":"A","text":"Sa"},{"key":"B","text":"lom"},{"key":"C","text":"alo"},{"key":"D","text":"om"}],"answer":"B"},{"id":36,"section":"String va uning metodlari","text":"'  test  '.strip() nima qaytaradi?","options":[{"key":"A","text":"'  test  '"},{"key":"B","text":"'test'"},{"key":"C","text":"'test  '"},{"key":"D","text":"'  test'"}],"answer":"B"},{"id":37,"section":"String va uning metodlari","text":"'kitob'.upper() natijasi nima?","options":[{"key":"A","text":"Kitob"},{"key":"B","text":"KITOB"},{"key":"C","text":"kitob"},{"key":"D","text":"kItOb"}],"answer":"B"},{"id":38,"section":"String va uning metodlari","text":"'PYTHON'.lower() natijasi nima?","options":[{"key":"A","text":"python"},{"key":"B","text":"Python"},{"key":"C","text":"PYTHON"},{"key":"D","text":"PyThOn"}],"answer":"A"},{"id":39,"section":"String va uning metodlari","text":"'a,b,c'.split(',') natijasi qaysi?","options":[{"key":"A","text":"'a b c'"},{"key":"B","text":"['a','b','c']"},{"key":"C","text":"('a','b','c')"},{"key":"D","text":"['a,b,c']"}],"answer":"B"},{"id":40,"section":"String va uning metodlari","text":"Python stringlari qanday xususiyatga ega?","options":[{"key":"A","text":"O‘zgarmas (immutable)"},{"key":"B","text":"Har doim o‘zgaruvchan"},{"key":"C","text":"Faqat raqam saqlaydi"},{"key":"D","text":"Indekslanmaydi"}],"answer":"A"},{"id":41,"section":"Sonlar va arifmetik operatorlar","text":"17 // 4 natijasi nima?","options":[{"key":"A","text":"4.25"},{"key":"B","text":"4"},{"key":"C","text":"1"},{"key":"D","text":"5"}],"answer":"B"},{"id":42,"section":"Sonlar va arifmetik operatorlar","text":"17 % 4 natijasi nima?","options":[{"key":"A","text":"4"},{"key":"B","text":"1"},{"key":"C","text":"0"},{"key":"D","text":"3"}],"answer":"B"},{"id":43,"section":"Sonlar va arifmetik operatorlar","text":"3 ** 3 natijasi nima?","options":[{"key":"A","text":"6"},{"key":"B","text":"9"},{"key":"C","text":"27"},{"key":"D","text":"33"}],"answer":"C"},{"id":44,"section":"Sonlar va arifmetik operatorlar","text":"6 + 2 * 3 natijasi nima?","options":[{"key":"A","text":"24"},{"key":"B","text":"12"},{"key":"C","text":"18"},{"key":"D","text":"11"}],"answer":"B"},{"id":45,"section":"Sonlar va arifmetik operatorlar","text":"20 - 4 * 3 natijasi nima?","options":[{"key":"A","text":"48"},{"key":"B","text":"8"},{"key":"C","text":"16"},{"key":"D","text":"12"}],"answer":"B"},{"id":46,"section":"Sonlar va arifmetik operatorlar","text":"type(2 + 3j) qaysi tur?","options":[{"key":"A","text":"int"},{"key":"B","text":"float"},{"key":"C","text":"complex"},{"key":"D","text":"str"}],"answer":"C"},{"id":47,"section":"Sonlar va arifmetik operatorlar","text":"10 / 4 natijasining turi odatda qanday?","options":[{"key":"A","text":"int"},{"key":"B","text":"float"},{"key":"C","text":"bool"},{"key":"D","text":"str"}],"answer":"B"},{"id":48,"section":"Sonlar va arifmetik operatorlar","text":"Qaysi ifoda True qaytaradi?","options":[{"key":"A","text":"4 == '4'"},{"key":"B","text":"7 < 3"},{"key":"C","text":"9 >= 9"},{"key":"D","text":"5 != 5"}],"answer":"C"},{"id":49,"section":"Sonlar va arifmetik operatorlar","text":"2 ning 5-darajasi qaysi operator bilan yoziladi?","options":[{"key":"A","text":"^"},{"key":"B","text":"**"},{"key":"C","text":"//"},{"key":"D","text":"%"}],"answer":"B"},{"id":50,"section":"Sonlar va arifmetik operatorlar","text":"Manfiy sonni modulga olish uchun qaysi funksiya ishlatiladi?","options":[{"key":"A","text":"round()"},{"key":"B","text":"abs()"},{"key":"C","text":"type()"},{"key":"D","text":"len()"}],"answer":"B"},{"id":51,"section":"Taqqoslash va shart operatorlari","text":"6 == 6 ifodasi nima qaytaradi?","options":[{"key":"A","text":"True"},{"key":"B","text":"False"},{"key":"C","text":"6"},{"key":"D","text":"None"}],"answer":"A"},{"id":52,"section":"Taqqoslash va shart operatorlari","text":"8 != 8 ifodasi nima qaytaradi?","options":[{"key":"A","text":"True"},{"key":"B","text":"False"},{"key":"C","text":"8"},{"key":"D","text":"Xatolik"}],"answer":"B"},{"id":53,"section":"Taqqoslash va shart operatorlari","text":"Kichik yoki teng operatori qaysi?","options":[{"key":"A","text":"=>"},{"key":"B","text":"=<"},{"key":"C","text":"<="},{"key":"D","text":"=="}],"answer":"C"},{"id":54,"section":"Taqqoslash va shart operatorlari","text":"if shartidan keyin qaysi belgi qo‘yiladi?","options":[{"key":"A","text":"Nuqta"},{"key":"B","text":":"},{"key":"C","text":"Vergul"},{"key":"D","text":"Nuqtali vergul"}],"answer":"B"},{"id":55,"section":"Taqqoslash va shart operatorlari","text":"if-else tuzilmasida else majburiymi?","options":[{"key":"A","text":"Ha"},{"key":"B","text":"Yo‘q"},{"key":"C","text":"Faqat Python 2’da"},{"key":"D","text":"Faqat sonlarda"}],"answer":"B"},{"id":56,"section":"Taqqoslash va shart operatorlari","text":"x = 10 bo‘lsa, x > 5 sharti qanday?","options":[{"key":"A","text":"True"},{"key":"B","text":"False"},{"key":"C","text":"10"},{"key":"D","text":"None"}],"answer":"A"},{"id":57,"section":"Taqqoslash va shart operatorlari","text":"Ichma-ich if nimani anglatadi?","options":[{"key":"A","text":"if ichida yana if ishlatish"},{"key":"B","text":"if o‘rniga for yozish"},{"key":"C","text":"Shartni o‘chirish"},{"key":"D","text":"Faqat bitta shart"}],"answer":"A"},{"id":58,"section":"Taqqoslash va shart operatorlari","text":"'ha' if 2 > 1 else 'yo‘q' natijasi nima?","options":[{"key":"A","text":"ha"},{"key":"B","text":"yo‘q"},{"key":"C","text":"True"},{"key":"D","text":"2"}],"answer":"A"},{"id":59,"section":"Taqqoslash va shart operatorlari","text":"0 qiymati shart sifatida qanday baholanadi?","options":[{"key":"A","text":"True"},{"key":"B","text":"False"},{"key":"C","text":"None"},{"key":"D","text":"Xatolik"}],"answer":"B"},{"id":60,"section":"Taqqoslash va shart operatorlari","text":"Bir nechta shartni mantiqiy bog‘lash uchun qaysi operator ishlatiladi?","options":[{"key":"A","text":"and"},{"key":"B","text":"print"},{"key":"C","text":"input"},{"key":"D","text":"def"}],"answer":"A"},{"id":61,"section":"while sikli va boshqaruv operatorlari","text":"while sikli qachon davom etadi?","options":[{"key":"A","text":"Shart True bo‘lganda"},{"key":"B","text":"Shart False bo‘lganda"},{"key":"C","text":"Faqat bir marta"},{"key":"D","text":"Faqat list bilan"}],"answer":"A"},{"id":62,"section":"while sikli va boshqaruv operatorlari","text":"while sharti boshidayoq False bo‘lsa nima bo‘ladi?","options":[{"key":"A","text":"Tana bajarilmaydi"},{"key":"B","text":"Tana ikki marta bajariladi"},{"key":"C","text":"Cheksiz sikl"},{"key":"D","text":"Sintaksis xatosi"}],"answer":"A"},{"id":63,"section":"while sikli va boshqaruv operatorlari","text":"break operatori nima qiladi?","options":[{"key":"A","text":"Joriy siklni tugatadi"},{"key":"B","text":"Keyingi iteratsiyaga o‘tadi"},{"key":"C","text":"Hech narsa qilmaydi"},{"key":"D","text":"Qiymat qaytaradi"}],"answer":"A"},{"id":64,"section":"while sikli va boshqaruv operatorlari","text":"continue operatori nima qiladi?","options":[{"key":"A","text":"Butun dasturni tugatadi"},{"key":"B","text":"Joriy iteratsiyaning qolgan qismini tashlaydi"},{"key":"C","text":"Siklni qayta nomlaydi"},{"key":"D","text":"O‘zgaruvchini o‘chiradi"}],"answer":"B"},{"id":65,"section":"while sikli va boshqaruv operatorlari","text":"pass operatori vazifasi nima?","options":[{"key":"A","text":"Bo‘sh blok uchun joy tutadi"},{"key":"B","text":"Siklni to‘xtatadi"},{"key":"C","text":"Qiymatni oshiradi"},{"key":"D","text":"Xatolik chiqaradi"}],"answer":"A"},{"id":66,"section":"while sikli va boshqaruv operatorlari","text":"while True odatda qanday sikl hosil qiladi?","options":[{"key":"A","text":"Bir martalik"},{"key":"B","text":"Cheksiz, chiqish sharti bo‘lmasa"},{"key":"C","text":"Faqat 2 marta"},{"key":"D","text":"Sikl emas"}],"answer":"B"},{"id":67,"section":"while sikli va boshqaruv operatorlari","text":"Siklni boshqarish uchun qaysi operator ishlatiladi?","options":[{"key":"A","text":"break"},{"key":"B","text":"upper"},{"key":"C","text":"append"},{"key":"D","text":"split"}],"answer":"A"},{"id":68,"section":"while sikli va boshqaruv operatorlari","text":"i = 0; while i < 3: i += 1 bajarilganda sikl necha marta ishlaydi?","options":[{"key":"A","text":"2"},{"key":"B","text":"3"},{"key":"C","text":"4"},{"key":"D","text":"Cheksiz"}],"answer":"B"},{"id":69,"section":"while sikli va boshqaruv operatorlari","text":"Sikl ichida hisoblagichni oshirish uchun ko‘p ishlatiladigan yozuv qaysi?","options":[{"key":"A","text":"i += 1"},{"key":"B","text":"i == 1"},{"key":"C","text":"i // 1"},{"key":"D","text":"i is 1"}],"answer":"A"},{"id":70,"section":"while sikli va boshqaruv operatorlari","text":"Cheksiz siklga nima sabab bo‘lishi mumkin?","options":[{"key":"A","text":"Shartga ta’sir qiluvchi qiymat o‘zgarmasligi"},{"key":"B","text":"Shartni False qilish"},{"key":"C","text":"break ishlatish"},{"key":"D","text":"Siklni tugatish"}],"answer":"A"},{"id":71,"section":"for sikli va range()","text":"for sikli odatda nimani aylanib chiqadi?","options":[{"key":"A","text":"Iterable elementlarini"},{"key":"B","text":"Faqat bitta butun sonni"},{"key":"C","text":"Faqat shartlarni"},{"key":"D","text":"Faqat funksiyalarni"}],"answer":"A"},{"id":72,"section":"for sikli va range()","text":"list(range(4)) natijasi qaysi?","options":[{"key":"A","text":"[1,2,3,4]"},{"key":"B","text":"[0,1,2,3]"},{"key":"C","text":"[0,1,2,3,4]"},{"key":"D","text":"[4]"}],"answer":"B"},{"id":73,"section":"for sikli va range()","text":"list(range(3, 7)) natijasi qaysi?","options":[{"key":"A","text":"[3,4,5,6]"},{"key":"B","text":"[3,4,5,6,7]"},{"key":"C","text":"[2,3,4,5,6]"},{"key":"D","text":"[4,5,6,7]"}],"answer":"A"},{"id":74,"section":"for sikli va range()","text":"list(range(0, 8, 2)) natijasi qaysi?","options":[{"key":"A","text":"[0,2,4,6]"},{"key":"B","text":"[2,4,6,8]"},{"key":"C","text":"[0,1,2,3,4,5,6,7]"},{"key":"D","text":"[1,3,5,7]"}],"answer":"A"},{"id":75,"section":"for sikli va range()","text":"for ch in 'uy': siklida ch qanday qiymat oladi?","options":[{"key":"A","text":"'uy' bir marta"},{"key":"B","text":"'u' va 'y' navbat bilan"},{"key":"C","text":"0 va 1"},{"key":"D","text":"Faqat 'y'"}],"answer":"B"},{"id":76,"section":"for sikli va range()","text":"for siklida break ishlatilsa nima bo‘ladi?","options":[{"key":"A","text":"Sikl tugaydi"},{"key":"B","text":"Keyingi elementga o‘tadi"},{"key":"C","text":"Sikl boshidan boshlanadi"},{"key":"D","text":"List nusxalanadi"}],"answer":"A"},{"id":77,"section":"for sikli va range()","text":"for siklida continue nima qiladi?","options":[{"key":"A","text":"Joriy iteratsiyani tashlab o‘tadi"},{"key":"B","text":"Siklni butunlay tugatadi"},{"key":"C","text":"Listni o‘chiradi"},{"key":"D","text":"Qiymatni satrga aylantiradi"}],"answer":"A"},{"id":78,"section":"for sikli va range()","text":"for _ in range(5) yozuvidagi _ odatda nimani bildiradi?","options":[{"key":"A","text":"Qiymat ishlatilmasligini"},{"key":"B","text":"Maxsus kalit so‘zni"},{"key":"C","text":"Xatolikni"},{"key":"D","text":"Sikl tugashini"}],"answer":"A"},{"id":79,"section":"for sikli va range()","text":"range(5, 2, -1) qaysi ketma-ketlikni beradi?","options":[{"key":"A","text":"5,4,3"},{"key":"B","text":"5,4,3,2"},{"key":"C","text":"2,3,4,5"},{"key":"D","text":"Bo‘sh"}],"answer":"A"},{"id":80,"section":"for sikli va range()","text":"range() ning uchinchi argumenti nimani bildiradi?","options":[{"key":"A","text":"Boshlanishni"},{"key":"B","text":"Tugashni"},{"key":"C","text":"Qadamni"},{"key":"D","text":"Element turini"}],"answer":"C"},{"id":81,"section":"List yaratish va o‘zgartirish","text":"Python’da list qaysi qavsda yoziladi?","options":[{"key":"A","text":"()"},{"key":"B","text":"{}"},{"key":"C","text":"[]"},{"key":"D","text":"<>"}],"answer":"C"},{"id":82,"section":"List yaratish va o‘zgartirish","text":"a = [4, 8, 12]; a[1] natijasi nima?","options":[{"key":"A","text":"4"},{"key":"B","text":"8"},{"key":"C","text":"12"},{"key":"D","text":"1"}],"answer":"B"},{"id":83,"section":"List yaratish va o‘zgartirish","text":"a = [4, 8, 12]; a[-1] natijasi nima?","options":[{"key":"A","text":"4"},{"key":"B","text":"8"},{"key":"C","text":"12"},{"key":"D","text":"-1"}],"answer":"C"},{"id":84,"section":"List yaratish va o‘zgartirish","text":"[2,4,6,8][1:3] natijasi qaysi?","options":[{"key":"A","text":"[2,4]"},{"key":"B","text":"[4,6]"},{"key":"C","text":"[4,6,8]"},{"key":"D","text":"[2,4,6]"}],"answer":"B"},{"id":85,"section":"List yaratish va o‘zgartirish","text":"Listning birinchi elementini o‘zgartirish qanday yoziladi?","options":[{"key":"A","text":"a(0)=7"},{"key":"B","text":"a[0]=7"},{"key":"C","text":"a{0}=7"},{"key":"D","text":"a<0>=7"}],"answer":"B"},{"id":86,"section":"List yaratish va o‘zgartirish","text":"List oxiriga bitta element qo‘shish metodi qaysi?","options":[{"key":"A","text":"append()"},{"key":"B","text":"insert()"},{"key":"C","text":"remove()"},{"key":"D","text":"sort()"}],"answer":"A"},{"id":87,"section":"List yaratish va o‘zgartirish","text":"a=[1,2]; a.extend([3,4]) dan keyin nima bo‘ladi?","options":[{"key":"A","text":"[1,2,[3,4]]"},{"key":"B","text":"[1,2,3,4]"},{"key":"C","text":"[3,4]"},{"key":"D","text":"[1,2]"}],"answer":"B"},{"id":88,"section":"List yaratish va o‘zgartirish","text":"Listga ko‘rsatilgan indeksga element qo‘shish metodi qaysi?","options":[{"key":"A","text":"append()"},{"key":"B","text":"insert()"},{"key":"C","text":"clear()"},{"key":"D","text":"pop()"}],"answer":"B"},{"id":89,"section":"List yaratish va o‘zgartirish","text":"len([5,10,15,20]) natijasi nima?","options":[{"key":"A","text":"3"},{"key":"B","text":"4"},{"key":"C","text":"5"},{"key":"D","text":"20"}],"answer":"B"},{"id":90,"section":"List yaratish va o‘zgartirish","text":"a=[1,2]; a.append([3,4]) natijasi qaysi?","options":[{"key":"A","text":"[1,2,3,4]"},{"key":"B","text":"[1,2,[3,4]]"},{"key":"C","text":"[[1,2],3,4]"},{"key":"D","text":"[3,4]"}],"answer":"B"},{"id":91,"section":"List metodlari, nusxalash va saralash","text":"remove(x) metodi nima qiladi?","options":[{"key":"A","text":"Qiymati x bo‘lgan birinchi elementni o‘chiradi"},{"key":"B","text":"Oxirgi elementni qaytaradi"},{"key":"C","text":"Listni saralaydi"},{"key":"D","text":"Listni nusxalaydi"}],"answer":"A"},{"id":92,"section":"List metodlari, nusxalash va saralash","text":"pop() odatda nima qiladi?","options":[{"key":"A","text":"Oxirgi elementni olib tashlab qaytaradi"},{"key":"B","text":"Barcha elementlarni o‘chiradi"},{"key":"C","text":"Listni saralaydi"},{"key":"D","text":"Element qo‘shadi"}],"answer":"A"},{"id":93,"section":"List metodlari, nusxalash va saralash","text":"del a[0] nima qiladi?","options":[{"key":"A","text":"Birinchi elementni o‘chiradi"},{"key":"B","text":"Birinchi elementni chiqaradi"},{"key":"C","text":"Listni nusxalaydi"},{"key":"D","text":"List uzunligini beradi"}],"answer":"A"},{"id":94,"section":"List metodlari, nusxalash va saralash","text":"a.sort() qanday ishlaydi?","options":[{"key":"A","text":"Listni joyida saralaydi"},{"key":"B","text":"Yangi tuple qaytaradi"},{"key":"C","text":"Listni bo‘shatadi"},{"key":"D","text":"Elementlarni ko‘paytiradi"}],"answer":"A"},{"id":95,"section":"List metodlari, nusxalash va saralash","text":"a.copy() nima qaytaradi?","options":[{"key":"A","text":"List nusxasini"},{"key":"B","text":"List uzunligini"},{"key":"C","text":"Oxirgi elementni"},{"key":"D","text":"Saralangan tuple"}],"answer":"A"},{"id":96,"section":"List metodlari, nusxalash va saralash","text":"a.clear() nima qiladi?","options":[{"key":"A","text":"Barcha elementlarni o‘chiradi"},{"key":"B","text":"Faqat birinchi elementni o‘chiradi"},{"key":"C","text":"Listni teskari qiladi"},{"key":"D","text":"Nusxa yaratadi"}],"answer":"A"},{"id":97,"section":"List metodlari, nusxalash va saralash","text":"sort(reverse=True) qanday saralaydi?","options":[{"key":"A","text":"Kamayish tartibida"},{"key":"B","text":"O‘sish tartibida"},{"key":"C","text":"Tasodifiy"},{"key":"D","text":"Alifbo bo‘yicha faqat"}],"answer":"A"},{"id":98,"section":"List metodlari, nusxalash va saralash","text":"a.index(x) nimani qaytaradi?","options":[{"key":"A","text":"x ning birinchi indeksini"},{"key":"B","text":"x necha marta borligini"},{"key":"C","text":"List uzunligini"},{"key":"D","text":"x ning turini"}],"answer":"A"},{"id":99,"section":"List metodlari, nusxalash va saralash","text":"Element listda yo‘q bo‘lsa, index() odatda nima yuzaga keltiradi?","options":[{"key":"A","text":"ValueError"},{"key":"B","text":"IndexZero"},{"key":"C","text":"TypeError har doim"},{"key":"D","text":"Hech narsa"}],"answer":"A"},{"id":100,"section":"List metodlari, nusxalash va saralash","text":"a.count(2) nima qaytaradi?","options":[{"key":"A","text":"2 qiymati necha marta uchrashini"},{"key":"B","text":"2 indeksini"},{"key":"C","text":"List uzunligini"},{"key":"D","text":"2 ning kvadratini"}],"answer":"A"},{"id":101,"section":"List bo‘ylab yurish va comprehension","text":"for x in [1,3,5]: print(x) nima qiladi?","options":[{"key":"A","text":"Elementlarni ketma-ket chiqaradi"},{"key":"B","text":"Faqat indekslarni chiqaradi"},{"key":"C","text":"Listni o‘chiradi"},{"key":"D","text":"Faqat 5 ni chiqaradi"}],"answer":"A"},{"id":102,"section":"List bo‘ylab yurish va comprehension","text":"[x*3 for x in [1,2,3]] natijasi qaysi?","options":[{"key":"A","text":"[1,2,3]"},{"key":"B","text":"[3,6,9]"},{"key":"C","text":"[1,4,9]"},{"key":"D","text":"[2,3,4]"}],"answer":"B"},{"id":103,"section":"List bo‘ylab yurish va comprehension","text":"[x for x in range(5) if x>2] natijasi nima?","options":[{"key":"A","text":"[0,1,2]"},{"key":"B","text":"[2,3,4]"},{"key":"C","text":"[3,4]"},{"key":"D","text":"[0,1,2,3,4]"}],"answer":"C"},{"id":104,"section":"List bo‘ylab yurish va comprehension","text":"List comprehension nima uchun qulay?","options":[{"key":"A","text":"Listni ixcham yaratish uchun"},{"key":"B","text":"Faqat fayl ochish uchun"},{"key":"C","text":"Siklni taqiqlash uchun"},{"key":"D","text":"Faqat matn chiqarish uchun"}],"answer":"A"},{"id":105,"section":"List bo‘ylab yurish va comprehension","text":"[int(x) for x in ['3','4']] natijasi qaysi?","options":[{"key":"A","text":"['3','4']"},{"key":"B","text":"[3,4]"},{"key":"C","text":"[3.0,4.0]"},{"key":"D","text":"Xatolik"}],"answer":"B"},{"id":106,"section":"List bo‘ylab yurish va comprehension","text":"[(x,x+1) for x in range(2)] natijasi qaysi?","options":[{"key":"A","text":"[(0,1),(1,2)]"},{"key":"B","text":"[0,1,2]"},{"key":"C","text":"[(1,2),(2,3)]"},{"key":"D","text":"[(0,0),(1,1)]"}],"answer":"A"},{"id":107,"section":"List bo‘ylab yurish va comprehension","text":"[x for x in [2,4,6] if x>4] natijasi nima?","options":[{"key":"A","text":"[2,4]"},{"key":"B","text":"[4,6]"},{"key":"C","text":"[6]"},{"key":"D","text":"[]"}],"answer":"C"},{"id":108,"section":"List bo‘ylab yurish va comprehension","text":"enumerate(list) odatda nimani beradi?","options":[{"key":"A","text":"Indeks va qiymat juftliklarini"},{"key":"B","text":"Faqat qiymatlarni"},{"key":"C","text":"List uzunligini"},{"key":"D","text":"List nusxasini"}],"answer":"A"},{"id":109,"section":"List bo‘ylab yurish va comprehension","text":"List indekslari bo‘yicha teskari yurish uchun qaysi range mos?","options":[{"key":"A","text":"range(len(a))"},{"key":"B","text":"range(len(a)-1,-1,-1)"},{"key":"C","text":"range(0,-1,1)"},{"key":"D","text":"range(1,len(a),1)"}],"answer":"B"},{"id":110,"section":"List bo‘ylab yurish va comprehension","text":"[x+10 for x in a] odatda a listini o‘zgartiradimi?","options":[{"key":"A","text":"Ha, har doim"},{"key":"B","text":"Yo‘q, yangi list yaratadi"},{"key":"C","text":"Faqat birinchi elementni"},{"key":"D","text":"Xatolik beradi"}],"answer":"B"},{"id":111,"section":"map(), filter(), reduce() va tekshirish","text":"map(func, iterable) nima qiladi?","options":[{"key":"A","text":"Har bir elementga funksiyani qo‘llaydi"},{"key":"B","text":"Mos elementlarni o‘chiradi"},{"key":"C","text":"Listni saralaydi"},{"key":"D","text":"Faqat birinchi elementni oladi"}],"answer":"A"},{"id":112,"section":"map(), filter(), reduce() va tekshirish","text":"list(map(lambda x:x+1,[1,2,3])) natijasi qaysi?","options":[{"key":"A","text":"[1,2,3]"},{"key":"B","text":"[2,3,4]"},{"key":"C","text":"[1,3,5]"},{"key":"D","text":"[3,4,5]"}],"answer":"B"},{"id":113,"section":"map(), filter(), reduce() va tekshirish","text":"filter(func, iterable) nima uchun ishlatiladi?","options":[{"key":"A","text":"Shartga mos elementlarni tanlash"},{"key":"B","text":"Har bir elementni ko‘paytirish"},{"key":"C","text":"Listni nusxalash"},{"key":"D","text":"Elementlarni tartiblash"}],"answer":"A"},{"id":114,"section":"map(), filter(), reduce() va tekshirish","text":"list(filter(lambda x:x%2==0,[1,2,3,4])) natijasi qaysi?","options":[{"key":"A","text":"[1,3]"},{"key":"B","text":"[2,4]"},{"key":"C","text":"[1,2,3,4]"},{"key":"D","text":"[4]"}],"answer":"B"},{"id":115,"section":"map(), filter(), reduce() va tekshirish","text":"reduce() funksiyasi qaysi modulda joylashgan?","options":[{"key":"A","text":"math"},{"key":"B","text":"random"},{"key":"C","text":"functools"},{"key":"D","text":"os"}],"answer":"C"},{"id":116,"section":"map(), filter(), reduce() va tekshirish","text":"reduce(lambda a,b:a+b,[2,3,4]) natijasi nima?","options":[{"key":"A","text":"9"},{"key":"B","text":"24"},{"key":"C","text":"7"},{"key":"D","text":"2"}],"answer":"A"},{"id":117,"section":"map(), filter(), reduce() va tekshirish","text":"List ichidagi elementning indeksini topish metodi qaysi?","options":[{"key":"A","text":"find()"},{"key":"B","text":"index()"},{"key":"C","text":"search()"},{"key":"D","text":"locate()"}],"answer":"B"},{"id":118,"section":"map(), filter(), reduce() va tekshirish","text":"a=[5,6,5]; a.index(5) natijasi nima?","options":[{"key":"A","text":"0"},{"key":"B","text":"1"},{"key":"C","text":"2"},{"key":"D","text":"5"}],"answer":"A"},{"id":119,"section":"map(), filter(), reduce() va tekshirish","text":"3 in [1,2,3] ifodasi nima qaytaradi?","options":[{"key":"A","text":"3"},{"key":"B","text":"False"},{"key":"C","text":"True"},{"key":"D","text":"None"}],"answer":"C"},{"id":120,"section":"map(), filter(), reduce() va tekshirish","text":"Python 3 da map() va filter() odatda nimani qaytaradi?","options":[{"key":"A","text":"List"},{"key":"B","text":"Iterator"},{"key":"C","text":"Tuple"},{"key":"D","text":"Integer"}],"answer":"B"}];
+let answers = Array(QUESTIONS.length).fill(null);
+let current = 0;
+let activeFilter = 'all';
+const $ = id => document.getElementById(id);
 
-    <script src="script.js"></script>
-  </body>
+function render(){
+  const q=QUESTIONS[current];
+  $('sectionTag').textContent=q.section;
+  $('qCount').textContent=`SAVOL ${String(current+1).padStart(3,'0')} / ${QUESTIONS.length}`;
+  $('currentStat').textContent=`${current+1} / ${QUESTIONS.length}`;
+  $('questionText').textContent=q.text;
+  const options=$('options'); options.replaceChildren();
+  q.options.forEach((opt,index)=>{
+    const label=document.createElement('label');
+    label.className='option'+(answers[current]===opt.key?' selected':'');
+    const input=document.createElement('input');input.type='radio';input.name='answer';input.value=opt.key;input.checked=answers[current]===opt.key;
+    input.setAttribute('aria-label',`${opt.key}: ${opt.text}`);
+    input.addEventListener('change',()=>choose(opt.key));
+    const letter=document.createElement('span');letter.className='letter';letter.textContent=opt.key;
+    const text=document.createElement('span');text.className='opttext';text.textContent=opt.text;
+    const check=document.createElement('span');check.className='option-check';check.textContent='✓';
+    label.append(input,letter,text,check);
+    options.appendChild(label);
+  });
+  $('prevBtn').disabled=current===0;
+  $('nextBtn').innerHTML=current===QUESTIONS.length-1?'Oxirgi savol <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>':'Keyingi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>';
+  updateProgress();renderGrid();
+}
+function choose(key){answers[current]=key;render();}
+function focusQuestion(){
+  // Savol matnini ekranga yaqinlashtiradi; sayt sarlavhasiga qaytarmaydi.
+  $('questionText').scrollIntoView({behavior:'smooth',block:'start'});
+  $('questionText').focus({preventScroll:true});
+}
+function move(delta){
+  const next=Math.max(0,Math.min(QUESTIONS.length-1,current+delta));
+  if(next===current)return;
+  current=next;render();focusQuestion();
+}
+function goTo(n){
+  if(n===current)return;
+  current=n;render();focusQuestion();
+}
+function updateProgress(){
+  const n=answers.filter(Boolean).length,pct=Math.round(n/QUESTIONS.length*100);
+  $('answeredStat').textContent=`${n} / ${QUESTIONS.length}`;
+  $('progressText').textContent=pct+'%';$('progressBar').style.width=pct+'%';
+  $('progressCount').innerHTML=`${n} <span style="font-size:12px;color:#9aa3b7;font-weight:650">/ ${QUESTIONS.length}</span>`;
+  $('remainingHint').textContent=n===QUESTIONS.length?'Ajoyib! Barcha savollarga javob berdingiz.':n===0?'Boshlash uchun javob variantini tanlang.':`${QUESTIONS.length-n} ta savolga hali javob berilmadi.`;
+}
+function renderGrid(){
+  const grid=$('numberGrid');grid.replaceChildren();
+  QUESTIONS.forEach((q,i)=>{
+    const b=document.createElement('button');
+    b.type='button';b.className='navnum'+(answers[i]?' done':'')+(i===current?' current':'');
+    b.textContent=i+1;b.title=`${i+1}-savol`;b.setAttribute('aria-label',`${i+1}-savol${answers[i]?', javob belgilangan':''}`);
+    b.setAttribute('aria-current',i===current?'step':'false');b.addEventListener('click',()=>goTo(i));grid.appendChild(b);
+  });
+}
+function finishQuiz(){
+  const empty=answers.filter(a=>!a).length;
+  if(empty>0){$('modalText').textContent=`${empty} ta savol javobsiz qolgan. Hozir yakunlasangiz, ular noto‘g‘ri deb hisoblanmaydi, lekin ballga qo‘shilmaydi.`;$('finishModal').classList.remove('hidden');return;}
+  showResults();
+}
+function closeModal(){$('finishModal').classList.add('hidden');}
+function confirmFinish(){closeModal();showResults();}
+function showResults(){
+  const empty=answers.filter(a=>!a).length;let correct=0,wrong=0;
+  QUESTIONS.forEach((q,i)=>{if(answers[i]===q.answer)correct++;else if(answers[i])wrong++;});
+  const pct=Math.round(correct/QUESTIONS.length*100);
+  $('testView').style.display='none';$('results').style.display='block';
+  $('scoreCircle').style.setProperty('--pct',pct+'%');$('scorePercent').textContent=pct+'%';
+  $('resultTitle').textContent=pct>=90?'Zo‘r natija!':pct>=75?'Juda yaxshi!':pct>=60?'Yaxshi harakat!':'Test yakunlandi';
+  $('resultSummary').textContent=`${QUESTIONS.length} ta savoldan ${correct} tasiga to‘g‘ri javob berdingiz. Natijangiz — ${pct}%.`;
+  $('correctCount').textContent=correct;$('wrongCount').textContent=wrong;$('emptyCount').textContent=empty;
+  activeFilter='all';document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));
+  renderReview();$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function setFilter(filter,btn){activeFilter=filter;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderReview();}
+function renderReview(){
+  const list=$('reviewList');list.replaceChildren();let shown=0;
+  QUESTIONS.forEach((q,i)=>{
+    const chosen=answers[i],isCorrect=chosen===q.answer,isEmpty=!chosen;
+    if(activeFilter==='wrong'&&(isCorrect||isEmpty))return;
+    if(activeFilter==='empty'&&!isEmpty)return;
+    shown++;
+    const item=document.createElement('article');item.className='review-item';
+    const top=document.createElement('div');top.className='review-top';
+    const title=document.createElement('h4');title.textContent=`${i+1}. ${q.text}`;
+    const status=document.createElement('span');status.className='status-pill '+(isEmpty?'empty':isCorrect?'ok':'bad');status.textContent=isEmpty?'Javobsiz':isCorrect?'To‘g‘ri':'Noto‘g‘ri';
+    top.append(title,status);item.append(top);
+    const your=document.createElement('p');your.innerHTML='<strong>Sizning javobingiz:</strong> ';
+    your.append(document.createTextNode(chosen?`${chosen}) ${q.options.find(o=>o.key===chosen).text}`:'Javob berilmagan'));
+    const right=document.createElement('p');right.className='answer-right';right.innerHTML='<strong>To‘g‘ri javob:</strong> ';
+    const answer=q.options.find(o=>o.key===q.answer);right.append(document.createTextNode(`${q.answer}) ${answer.text}`));
+    item.append(your,right);list.appendChild(item);
+  });
+  if(!shown){const empty=document.createElement('div');empty.className='empty-state';empty.textContent=activeFilter==='wrong'?'Ajoyib! Xato javoblar yo‘q.':'Javobsiz savollar yo‘q.';list.appendChild(empty);}
+}
+function restartQuiz(){
+  answers=Array(QUESTIONS.length).fill(null);current=0;$('results').style.display='none';$('testView').style.display='block';render();
+  $('quizCard').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.addEventListener('keydown',e=>{
+  if(!$('finishModal').classList.contains('hidden')){if(e.key==='Escape')closeModal();return;}
+  if($('results').style.display==='block')return;
+  if(['INPUT','TEXTAREA'].includes(document.activeElement.tagName))return;
+  if(['1','2','3','4'].includes(e.key)){choose(['A','B','C','D'][Number(e.key)-1]);}
+  else if(e.key==='ArrowRight'){e.preventDefault();move(1);}
+  else if(e.key==='ArrowLeft'){e.preventDefault();move(-1);}
+});
+render();
+</script>
+</body>
 </html>
