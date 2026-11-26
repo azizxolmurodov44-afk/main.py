@@ -174,7 +174,8 @@ main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:rel
       <span class="test-picker-label">Test turini tanlang:</span>
       <button class="test-choice active" type="button" data-test="python" aria-pressed="true" onclick="selectTest('python')">Python</button>
       <button class="test-choice" type="button" data-test="html" aria-pressed="false" onclick="selectTest('html')">HTML</button>
-      <button class="test-choice" id="customTestChoice" type="button" data-test="custom" aria-pressed="false" onclick="openCustomTest()">Test yaratish</button>
+      <button class="test-choice" type="button" onclick="openCustomTest()">Test yaratish</button>
+      <button class="test-choice" id="customTestChoice" type="button" data-test="custom" aria-pressed="false" disabled onclick="startCustomTest()">Mening testim</button>
     </div>
     <div class="level-picker" id="htmlLevelPicker" role="group" aria-label="HTML test darajasini tanlang" hidden>
       <span class="level-picker-label">HTML darajasi:</span>
@@ -400,7 +401,8 @@ function renderMakerQuestions(){
   });
   const hasQuestions=customQuestions.length>0;
   $('startCustomTest').disabled=!hasQuestions;
-  $('customTestChoice').disabled=false;
+  $('customTestChoice').disabled=!hasQuestions;
+  $('customTestChoice').textContent=hasQuestions?`Mening testim · ${customQuestions.length}`:'Mening testim';
   $('makerStatus').textContent=hasQuestions?`${customQuestions.length} ta savol tayyor.`:'Hozircha savol qo‘shilmagan.';
 }
 function saveCustomQuestions(){
@@ -419,6 +421,7 @@ function addCustomQuestion(event){
   event.currentTarget.reset();
   saveCustomQuestions();
   renderMakerQuestions();
+  $('customTestChoice').textContent=`Mening testim · ${customQuestions.length}`;
 }
 function removeCustomQuestion(index){
   customQuestions.splice(index,1);customAnswers.splice(index,1);
