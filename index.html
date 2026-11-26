@@ -174,7 +174,7 @@ main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:rel
       <span class="test-picker-label">Test turini tanlang:</span>
       <button class="test-choice active" type="button" data-test="python" aria-pressed="true" onclick="selectTest('python')">Python</button>
       <button class="test-choice" type="button" data-test="html" aria-pressed="false" onclick="selectTest('html')">HTML</button>
-      <button class="test-choice" id="customTestChoice" type="button" data-test="custom" aria-pressed="false" disabled onclick="selectTest('custom')">Mening testim</button>
+      <button class="test-choice" id="customTestChoice" type="button" data-test="custom" aria-pressed="false" onclick="openCustomTest()">Test yaratish</button>
     </div>
     <div class="level-picker" id="htmlLevelPicker" role="group" aria-label="HTML test darajasini tanlang" hidden>
       <span class="level-picker-label">HTML darajasi:</span>
@@ -185,7 +185,7 @@ main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:rel
     </div>
     <details class="custom-maker" id="customMaker">
       <summary>O‘zingiz test tuzing</summary>
-      <p class="maker-description">Savol, to‘rtta javob variantini kiriting va to‘g‘ri javobni belgilang. Tayyor testni shu sahifada ishlashingiz mumkin. Testlar hozircha faqat sahifa ochiq turgan paytda saqlanadi; ulashish uchun serverga saqlash xizmati ulanmagan.</p>
+      <p class="maker-description">Istalgan mavzuda test tuzing: savol, to‘rtta javob variantini kiriting va to‘g‘ri javobni belgilang. Test shu brauzerda saqlanadi va sahifa yangilanganda ham qoladi. Boshqa qurilma yoki foydalanuvchilar bilan ulashish uchun backend kerak.</p>
       <form class="maker-form" id="makerForm">
         <label class="maker-field maker-wide">Savol
           <input name="question" type="text" maxlength="240" required placeholder="Masalan: HTML nima uchun ishlatiladi?">
@@ -321,8 +321,9 @@ let activeTest = 'python';
 let activeHtmlLevel = 'all';
 let pythonAnswers = answers;
 let htmlAnswers = Array(HTML_QUESTIONS.length).fill(null);
-let customQuestions = [];
-let customAnswers = [];
+const CUSTOM_STORAGE_KEY = 'public-custom-quiz-questions';
+let customQuestions = (()=>{try{return JSON.parse(localStorage.getItem(CUSTOM_STORAGE_KEY)||'[]').filter(q=>q&&typeof q.text==='string'&&Array.isArray(q.options)&&q.options.length===4&&q.answer);}catch(error){return [];}})();
+let customAnswers = Array(customQuestions.length).fill(null);
 const HTML_LEVEL_QUESTION_IDS = {
   beginner: [1,2,3,4,5,6,7,9,10,11,12,16,17,18,19,20,21,22,27,28],
   intermediate: [8,13,14,15,23,24,25,26,29,30,31,33,34,36,37,42,45],
@@ -380,6 +381,13 @@ function selectHtmlLevel(level){
   document.title=`HTML Quiz — ${total} ta interaktiv test`;
   render();
 }
+function openCustomTest(){
+  $('customMaker').hidden=false;
+  $('customMaker').open=true;
+  $('customMaker').scrollIntoView({behavior:'smooth',block:'start'});
+  const questionInput=$('customMaker').querySelector('input[name="question"]');
+  if(questionInput)questionInput.focus({preventScroll:true});
+}
 function renderMakerQuestions(){
   const list=$('makerQuestions');list.replaceChildren();
   customQuestions.forEach((question,index)=>{
@@ -392,8 +400,11 @@ function renderMakerQuestions(){
   });
   const hasQuestions=customQuestions.length>0;
   $('startCustomTest').disabled=!hasQuestions;
-  $('customTestChoice').disabled=!hasQuestions;
+  $('customTestChoice').disabled=false;
   $('makerStatus').textContent=hasQuestions?`${customQuestions.length} ta savol tayyor.`:'Hozircha savol qo‘shilmagan.';
+}
+function saveCustomQuestions(){
+  try{localStorage.setItem(CUSTOM_STORAGE_KEY,JSON.stringify(customQuestions));}catch(error){}
 }
 function addCustomQuestion(event){
   event.preventDefault();
@@ -406,11 +417,13 @@ function addCustomQuestion(event){
   });
   customAnswers.push(null);
   event.currentTarget.reset();
+  saveCustomQuestions();
   renderMakerQuestions();
 }
 function removeCustomQuestion(index){
   customQuestions.splice(index,1);customAnswers.splice(index,1);
   customQuestions.forEach((question,i)=>question.id=i+1);
+  saveCustomQuestions();
   renderMakerQuestions();
   if(activeTest==='custom'){
     if(!customQuestions.length){selectTest('python');return;}

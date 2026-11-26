@@ -6,7 +6,7 @@ O‘zbek tilidagi interaktiv dasturlash testlari sayti. Bosh sahifa (`index.html
 
 HTML testini boshlang‘ich (20), o‘rta (17) va yuqori (13) darajalarga ajratish yoki barcha savollarni birgalikda yechish mumkin. Yakuniy tahlilda to‘g‘ri javoblar va tushuntirishlar ko‘rsatiladi. Foydalanuvchi yorug‘ va qora fonni almashtirishi mumkin.
 
-Test yaratuvchida qo‘shilgan savollar faqat shu sahifa ochiq turganda xotirada saqlanadi. Umumiy/admin boshqaruvi uchun xavfsiz server tomondagi autentifikatsiya va backend kerak; repoda hozircha bunday sozlama yo‘q.
+Test yaratuvchida qo‘shilgan savollar shu brauzerning localStorage xotirasida saqlanadi va sahifa yangilanganda qoladi. Ular faqat ayni qurilmada ko‘rinadi. Boshqa foydalanuvchilar testini umumiy ko‘rishi yoki xavfsiz admin kirishini ulash uchun server tomondagi autentifikatsiya va backend kerak; repoda hozircha bunday sozlama yo‘q.
 
 ## Ishga tushirish
 
