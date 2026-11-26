@@ -42,6 +42,10 @@ main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:rel
 .test-picker-label{padding:0 9px;color:var(--muted);font-size:12px;font-weight:750}
 .test-choice{border:1px solid transparent;border-radius:10px;padding:9px 14px;background:transparent;color:#68738c;font-size:12px;font-weight:800;cursor:pointer}
 .test-choice.active{background:var(--blue-soft);border-color:#d8dcff;color:#4c56d7}.test-choice:disabled{opacity:.45;cursor:not-allowed}
+.level-picker{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:-3px 0 13px;padding:10px 12px;border:1px solid #eaecf5;background:#ffffffed;border-radius:15px}
+.level-picker[hidden]{display:none}.level-picker-label{padding:0 5px;color:var(--muted);font-size:12px;font-weight:750}
+.level-choice{border:1px solid #e6e9f2;border-radius:10px;padding:8px 12px;background:transparent;color:#68738c;font-size:12px;font-weight:800;cursor:pointer}
+.level-choice.active{background:var(--blue-soft);border-color:#d8dcff;color:#4c56d7}
 .custom-maker{margin-bottom:17px;padding:18px;border:1px solid #e9ebf4;border-radius:17px;background:#fff;box-shadow:0 8px 24px #28346a0c}
 .custom-maker summary{font-size:14px;font-weight:850;cursor:pointer}.maker-description,.maker-status{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.55}
 .maker-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:15px}
@@ -112,6 +116,7 @@ main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:rel
 :root[data-theme="dark"] body{background:radial-gradient(circle at 8% 18%,#111522 0,transparent 26rem),radial-gradient(circle at 93% 42%,#161222 0,transparent 23rem),var(--bg)}
 :root[data-theme="dark"] .hero{background:linear-gradient(115deg,#050609 0%,#10131c 58%,#1a1928 100%)}
 :root[data-theme="dark"] .test-picker,:root[data-theme="dark"] .custom-maker,:root[data-theme="dark"] .stat,:root[data-theme="dark"] .quiz-card,:root[data-theme="dark"] .side-card,:root[data-theme="dark"] .results-card,:root[data-theme="dark"] .option,:root[data-theme="dark"] .result-stat,:root[data-theme="dark"] .review-item,:root[data-theme="dark"] .filter-btn,:root[data-theme="dark"] .maker-question,:root[data-theme="dark"] .modal{background:#12151e;border-color:var(--line);color:var(--ink)}
+:root[data-theme="dark"] .level-picker{background:#12151e;border-color:var(--line)}
 :root[data-theme="dark"] .option:hover{background:#1b2031;border-color:#747ff4}
 :root[data-theme="dark"] .option.selected{background:linear-gradient(100deg,#202644,#171c2c)}
 :root[data-theme="dark"] .opttext,:root[data-theme="dark"] .review-item p,:root[data-theme="dark"] .review-item p strong,:root[data-theme="dark"] .review-item h4,:root[data-theme="dark"] .maker-field{color:#d7dced}
@@ -126,6 +131,8 @@ main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:rel
 :root[data-theme="dark"] .empty-state{border-color:#3a4155;color:#a3acc2}
 :root[data-theme="dark"] .test-choice,:root[data-theme="dark"] .qcount,:root[data-theme="dark"] .keyboard-tip,:root[data-theme="dark"] .legend{color:#aab3c8}
 :root[data-theme="dark"] .test-choice.active{background:#222747;border-color:#48528c;color:#cbd1ff}
+:root[data-theme="dark"] .level-choice{border-color:#363d51;color:#aab3c8}
+:root[data-theme="dark"] .level-choice.active{background:#222747;border-color:#48528c;color:#cbd1ff}
 :root[data-theme="dark"] .topic-pill{color:#cbd1ff}
 :root[data-theme="dark"] .navnum.done:not(.current){background:#153126;border-color:#275a42;color:#8ce0b2}
 :root[data-theme="dark"] .review-item p.answer-right strong{color:var(--green)}
@@ -168,6 +175,13 @@ main{width:min(1160px,100%);margin:-25px auto 0;padding:0 18px 52px;position:rel
       <button class="test-choice active" type="button" data-test="python" aria-pressed="true" onclick="selectTest('python')">Python</button>
       <button class="test-choice" type="button" data-test="html" aria-pressed="false" onclick="selectTest('html')">HTML</button>
       <button class="test-choice" id="customTestChoice" type="button" data-test="custom" aria-pressed="false" disabled onclick="selectTest('custom')">Mening testim</button>
+    </div>
+    <div class="level-picker" id="htmlLevelPicker" role="group" aria-label="HTML test darajasini tanlang" hidden>
+      <span class="level-picker-label">HTML darajasi:</span>
+      <button class="level-choice active" type="button" data-level="all" aria-pressed="true" onclick="selectHtmlLevel('all')">Barcha savollar · 50</button>
+      <button class="level-choice" type="button" data-level="beginner" aria-pressed="false" onclick="selectHtmlLevel('beginner')">Boshlang‘ich · 20</button>
+      <button class="level-choice" type="button" data-level="intermediate" aria-pressed="false" onclick="selectHtmlLevel('intermediate')">O‘rta · 17</button>
+      <button class="level-choice" type="button" data-level="advanced" aria-pressed="false" onclick="selectHtmlLevel('advanced')">Yuqori · 13</button>
     </div>
     <details class="custom-maker" id="customMaker">
       <summary>O‘zingiz test tuzing</summary>
@@ -304,17 +318,29 @@ const HTML_QUESTIONS = [
   {id:50,section:'Formalar',text:'Formaning ichidagi tugma formani yubormasligi uchun qaysi type qiymati beriladi?',options:[{key:'A',text:'type="submit"'},{key:'B',text:'type="send"'},{key:'C',text:'type="form"'},{key:'D',text:'type="button"'}],answer:'D',explanation:'Formaning ichidagi button turi odatda submit bo‘ladi; type="button" esa bosilganda formani o‘z-o‘zidan yubormaydi.'}
 ];
 let activeTest = 'python';
+let activeHtmlLevel = 'all';
 let pythonAnswers = answers;
 let htmlAnswers = Array(HTML_QUESTIONS.length).fill(null);
 let customQuestions = [];
 let customAnswers = [];
+const HTML_LEVEL_QUESTION_IDS = {
+  beginner: [1,2,3,4,5,6,7,9,10,11,12,16,17,18,19,20,21,22,27,28],
+  intermediate: [8,13,14,15,23,24,25,26,29,30,31,33,34,36,37,42,45],
+  advanced: [32,35,38,39,40,41,43,44,46,47,48,49,50]
+};
+function getHtmlQuestions(level){
+  if(level==='all')return HTML_QUESTIONS;
+  const ids=new Set(HTML_LEVEL_QUESTION_IDS[level]);
+  return HTML_QUESTIONS.filter(question=>ids.has(question.id));
+}
 function selectTest(test){
   if(test===activeTest||(test==='custom'&&!customQuestions.length))return;
   activeTest=test;
   const isHtml=test==='html',isCustom=test==='custom';
-  const questions=isHtml?HTML_QUESTIONS:isCustom?customQuestions:PYTHON_QUESTIONS;
+  if(isHtml)activeHtmlLevel='all';
+  const questions=isHtml?getHtmlQuestions(activeHtmlLevel):isCustom?customQuestions:PYTHON_QUESTIONS;
   QUESTIONS.splice(0,QUESTIONS.length,...questions);
-  answers=isHtml?htmlAnswers:isCustom?customAnswers:pythonAnswers;
+  answers=isHtml?questions.map(question=>htmlAnswers[question.id-1]):isCustom?customAnswers:pythonAnswers;
   current=0;
   const total=QUESTIONS.length;
   $('totalStat').textContent=total;$('mapCount').textContent=`${total} savol`;
@@ -322,13 +348,36 @@ function selectTest(test){
   $('brandMark').textContent=isHtml?'5':isCustom?'✎':'Py';
   $('brandName').textContent=isHtml?'HTML QUIZ':isCustom?'MENING TESTIM':'PYTHON QUIZ';
   $('heroTitle').innerHTML=isHtml?'HTML belgilash<br>tili asoslari':isCustom?'O‘zingiz tuzgan<br>test':'Python dasturlash<br>asoslari';
-  $('heroDescription').textContent=isHtml?'HTML elementlari, atributlari va semantikasi bo‘yicha bilimlaringizni tekshiring. Yakunda javoblar va izohlarni ko‘ring.':isCustom?'Test tuzish oynasida qo‘shgan savollaringizga javob bering va natijalarni ko‘ring.':'12 ta mavzu bo‘yicha bilimlaringizni tekshiring. Har bir savolga javob tanlang va yakunda batafsil natijangizni ko‘ring.';
+  $('heroDescription').textContent=isHtml?'HTML bilimlaringizni boshlang‘ich, o‘rta yoki yuqori darajada sinang. Yakunda javoblar va izohlarni ko‘ring.':isCustom?'Test tuzish oynasida qo‘shgan savollaringizga javob bering va natijalarni ko‘ring.':'12 ta mavzu bo‘yicha bilimlaringizni tekshiring. Har bir savolga javob tanlang va yakunda batafsil natijangizni ko‘ring.';
   document.title=`${isHtml?'HTML':isCustom?'Mening':'Python'} Quiz — ${total} ta interaktiv test`;
   $('customMaker').hidden=isCustom;
+  $('htmlLevelPicker').hidden=!isHtml;
+  document.querySelectorAll('.level-choice').forEach(button=>{
+    const selected=button.dataset.level===activeHtmlLevel;
+    button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));
+  });
   document.querySelectorAll('.test-choice').forEach(button=>{
     const selected=button.dataset.test===test;
     button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));
   });
+  render();
+}
+function selectHtmlLevel(level){
+  if(activeTest!=='html'||level===activeHtmlLevel)return;
+  activeHtmlLevel=level;
+  const questions=getHtmlQuestions(level);
+  QUESTIONS.splice(0,QUESTIONS.length,...questions);
+  answers=questions.map(question=>htmlAnswers[question.id-1]);
+  current=0;
+  const total=QUESTIONS.length;
+  $('totalStat').textContent=total;$('mapCount').textContent=`${total} savol`;
+  $('answeredStat').textContent=`${answers.filter(Boolean).length} / ${total}`;
+  $('questionChip').textContent=`✦ ${total} ta savol`;
+  document.querySelectorAll('.level-choice').forEach(button=>{
+    const selected=button.dataset.level===level;
+    button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));
+  });
+  document.title=`HTML Quiz — ${total} ta interaktiv test`;
   render();
 }
 function renderMakerQuestions(){
@@ -451,7 +500,11 @@ function render(){
   $('nextBtn').innerHTML=current===QUESTIONS.length-1?'Oxirgi savol <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>':'Keyingi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>';
   updateProgress();renderGrid();
 }
-function choose(key){answers[current]=key;render();}
+function choose(key){
+  answers[current]=key;
+  if(activeTest==='html')htmlAnswers[QUESTIONS[current].id-1]=key;
+  render();
+}
 function focusQuestion(){
   // Savol matnini ekranga yaqinlashtiradi; sayt sarlavhasiga qaytarmaydi.
   $('questionText').scrollIntoView({behavior:'smooth',block:'start'});
@@ -529,7 +582,7 @@ function renderReview(){
 function restartQuiz(){
   answers=Array(QUESTIONS.length).fill(null);
   if(activeTest==='python')pythonAnswers=answers;
-  else if(activeTest==='html')htmlAnswers=answers;
+  else if(activeTest==='html')QUESTIONS.forEach(question=>{htmlAnswers[question.id-1]=null;});
   else customAnswers=answers;
   current=0;$('results').style.display='none';$('testView').style.display='block';render();
   $('quizCard').scrollIntoView({behavior:'smooth',block:'start'});
